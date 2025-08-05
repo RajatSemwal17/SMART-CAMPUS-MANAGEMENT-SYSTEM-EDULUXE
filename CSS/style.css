@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+  user-select: none;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header{
+  background-color: rgb(255, 255, 255);
+  height: 4em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000 ;
+}
+.logo {
+  position: relative;
+  height: 5em;
+  width: 10em;
+  overflow: hidden;
+  width: 20%;
+  cursor: pointer;
+}
+
+.logo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 6em;
+}
+
+.center-nav {
+  width: 100%;
+  max-width: 70em;
+  padding: 0.6em;
+  /* width: 70em; approx. 1120px (70 * 16px) */
+  background-color: rgba(24, 22, 24, .1);
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 11px;
+  font-size: 13px;
+}
+
+.center-nav a{
+  padding: 0.6em 2em;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out 0s;
+  color: rgb(79, 77, 77);
+  font-weight: bold;
+}
+.center-nav a:hover{
+  background-color: rgba(255, 255, 255, 0.803);
+}
+
+.nav-btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  gap: 20%;
+}
+main{
+  position: relative;
+}
+.nav-btns-main{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 30%;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+
+.login , .signup{
+  cursor: pointer;
+}
+.login{
+  position: relative;
+  font-size: 13px;
+}
+.login .left{
+  color: rgb(186, 182, 182);
+  transition: all 0.1s ease-in-out 0s;
+  position: absolute;
+  right:-1.5em;
+}
+.login:hover .left{
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  right:-1.2em;
+}
+.login .right{
+  color: rgb(186, 182, 182);
+  transition: all 0.1s ease-in-out 0s;
+  position: absolute;
+  left:-1.5em;
+}
+.login:hover .right{
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  left:-1.2em;
+}
+
+.signup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(49, 47, 46);
+  padding: 0.7em 2em;
+  border-radius: 8px;
+  color: white;
+  border-bottom: 8px solid black;
+  transition: all 0.1s ease-in-out 0s;
+  position: relative;
+  font-size: 14px;
+}
+.signup:hover{
+  background-color: rgb(49, 47, 46);
+  border-bottom: 8px solid transparent;
+}
+.signup .right2{
+  color: rgb(186, 182, 182);
+  transition: all 0.1s ease-in-out 0s;
+  position: relative;
+  left: -0.5em;
+}
+.signup:hover{
+  color: rgb(0, 255, 0);
+}
+.signup:hover .right2{
+  color: rgb(30, 255, 0);
+  font-weight: 900;
+  left: 0em;
+}
+.front-view {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+main{
+  width: 100vw;
+}
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}
+
+.title-main {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: rgb(26, 4, 37);
+  font-weight: bold;
+  letter-spacing: 3px;
+  z-index: 2;
+  font-family: "Anton", sans-serif;
+  width: 10em;
+}
+.para-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: rgb(14, 17, 116);
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  z-index: 2;
+  font-family: "Electrolize", sans-serif;
+  width:70vw;
+}
+
+
+/* HAMBURGER */
+.hamburger{
+  display: none;
+  padding: 1em 3em;
+  font-size: 14px
+}

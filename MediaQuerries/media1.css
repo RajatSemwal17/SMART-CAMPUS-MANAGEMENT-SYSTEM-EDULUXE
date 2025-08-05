@@ -1,0 +1,110 @@
+@media (max-width: 1350px) {
+  .center-nav {
+    display: none;
+  }
+  .center-nav a{
+    color: white;
+  }
+  .center-nav.show {
+    position: fixed;
+    top: 0;
+    
+  width: 100vw;
+  height: 100vh;
+  
+  background-image: url('../images/crushedPaper.jpg');
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  
+  font-size: 1.5em;
+  z-index: 10;
+  border-radius: 0; /* Remove the rounded corners */
+  transform: translate(-100vw);
+  
+  overflow-y: auto;
+}
+  @keyframes moveForward {
+  0% {
+    transform: translate(100vw);
+  }
+  100% {
+    transform: translate(0vw);
+  }
+}
+
+@keyframes moveBehind {
+  0% {
+    transform: translate(0vw);
+  }
+  100% {
+    transform: translate(100vw);
+  }
+}
+  main{
+    position: relative;
+  }
+  .nav-btns{
+    display: none;
+  }
+  .nav-btns-main{
+    display: flex;
+  }
+  .nav-btns-main .signup{
+    font-size: 1.2em;
+    padding: 1em 2em;
+  }
+  .nav-btns-main .login{
+    font-size: 1.2em;
+  }
+  .hamburger {
+    display: block;
+    z-index: 12;
+    
+    width: 0em;
+    position: relative;
+  }
+  .hamburger i{
+    font-size: 1.5em;
+    background:linear-gradient(to bottom, rgb(255, 0, 234),rgb(8, 134, 130));
+    background-clip: text;
+    color: transparent;
+    position: absolute;
+    right: 1em;
+    bottom: 0.5em;
+  }
+}
+
+@media (max-width:800px){
+  .title-main{
+    font-size: 3em;
+  }
+  .para-main{
+    font-size: 1.4rem;
+  }
+  .nav-btns-main .signup{
+    font-size: 1.2em;
+    padding: 0.6em 2.2em;
+  }
+  .nav-btns-main .login{
+    font-size: 1.2em;
+  }
+}
+@media (max-width:570px){
+  .title-main{
+    font-size: 2em;
+  }
+  .logo{
+  margin-left: 1em;
+  }
+  .nav-btns-main .signup{
+    font-size: 1em;
+    padding: 0.7em 2em;
+  }
+  .nav-btns-main .login{
+    font-size: 1em;
+  }
+}
