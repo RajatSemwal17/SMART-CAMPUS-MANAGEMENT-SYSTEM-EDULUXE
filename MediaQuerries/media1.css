@@ -108,3 +108,13 @@
     font-size: 1em;
   }
 }
+@media (max-width:916px){
+  table{
+    font-size: 12px;
+  }
+}
+@media (max-width:780px){
+  table{
+    font-size: 6.5px;
+  }
+}
