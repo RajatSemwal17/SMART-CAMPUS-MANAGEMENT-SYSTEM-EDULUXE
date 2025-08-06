@@ -1,0 +1,132 @@
+/* Style the entire table */
+table {
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-collapse: collapse;
+  text-align: center;
+  width: 86%;
+  font-family: Arial;
+}
+/* Header row */
+thead {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Header cells */
+th {
+  padding: 2em;
+  border: 1px solid #171313;
+  font-weight: bold;
+}
+
+/* Body rows */
+tbody tr {
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+th{
+  transition: background-color 0.3s;
+}
+/* Hover effect */
+th:hover {
+  background-color: rgb(0, 0, 0)
+}
+
+/* Data cells */
+td {
+  padding: 1.5em;
+  border: 2px solid #0000003f;
+  transition: background-color 0.3s;
+}
+td:hover{
+  transform:scale(1.1);
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+
+label[for="groupSelect"] {
+  margin-left: 10px;
+}
+
+.selectGroup {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.selectGroup:hover {
+  background-color: #eef6ff;
+}
+
+.selectGroup:focus {
+  outline: none;
+  border-color: #00ff2f;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.generate{
+  padding: 1em 2em;
+  border: none;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border-radius: 3px;
+  transition: background-Color 0.5s;
+  cursor: pointer;
+}
+.generate:hover{
+  background-color: rgba(255, 0, 0, 0.642);
+}
+
+.toggle{
+  position: relative;
+  margin:1em 1em;
+  height: 50px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.696);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out 0s;
+  box-shadow: 0px 7px 7px rgb(111, 110, 110);
+  cursor: pointer;
+}
+.moon{
+  color: white;
+}
+.sun,.moon{
+  position: absolute;
+  height: 2em;
+  transition: all 0.2s ease-in-out 0s;
+}
+.sun{
+  color: #1c1c1c77;
+}
+.moon{
+  color: white;
+}
+.toggle:hover{
+  border: 1px solid rgb(0, 255, 0);
+  box-shadow: 0px 2px 7px rgb(68, 255, 0);
+}
+.toggle:hover .sun{
+  transition: all 0.2s ease-in-out 0s;
+  color: rgb(0, 255, 21);
+}
+.toggle:hover .moon{
+  transition: all 0.2s ease-in-out 0s;
+  color: rgb(0, 255, 21);
+}
+
+

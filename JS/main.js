@@ -1,7 +1,7 @@
-window.addEventListener("DOMContentLoaded", () => {
-    const video = document.querySelector(".video");
-    video.playbackRate = 0.6;
-});
+// window.addEventListener("DOMContentLoaded", () => {
+//     const video = document.querySelector(".video");
+//     video.playbackRate = 0.6;
+// });
 
 
 const hamburger = document.querySelector('.hamburger');

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time-Table</title>
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.freepik.com/512/3624/3624948.png">
+
+
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/timetable.css">
+  <link rel="stylesheet" href="MediaQuerries/media1.css">
+</head>
+
+<body>
+    <header>
+    <nav>
+      <div class="logo">
+        <img src="images/eduluxe.png" alt="">
+      </div>
+
+      <div class="center-nav">
+        <a href="index.html">Home </a>
+        <a href="about.html">About </a>
+        <a href="timetable.html" style="background-color: #00ffd275;">Time-Table </a>
+        <a href="">Departments </a>
+        <a href="">Notices</a>
+        <a href="">Events </a>
+        <a href="">Contact </a>
+      </div>
+      
+      <div class="nav-btns">
+        <div class="login">
+          <i class="fa-solid fa-angle-right right"></i> LOGIN <i class="fa-solid fa-angle-left left"></i>
+        </div>
+        <div class="signup">
+          <i class="fa-solid fa-angle-right right2"></i> SIGNUP
+        </div>
+      </div>
+      <div class="hamburger">
+        <i class="fa-solid fa-burger"></i>
+      </div>
+    </nav>
+  </header>
+  <br><br><br><br>
+
+  <label for="groupSelect">Group:</label>
+  <select name="" class="selectGroup" id="groupSelect">
+    <option value="" ></option>
+    <option value="G1">G1</option>
+    <option value="G5">G5</option>
+    <option value="G9">G9</option>
+    <option value="G13">G13</option>
+  </select>
+  <button class="generate">
+    Generate
+  </button>
+
+  <table border="1" cellspacing="0" cellpadding="8"
+  style="border-collapse: collapse; text-align: center; width: 95%; font-family: Arial; margin: 0 auto;">
+</table>
+
+
+
+
+  <script src="JS/main.js"></script>
+  <script src="JS/timetable.js"></script>
+</body>
+</html>
