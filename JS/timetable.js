@@ -45,7 +45,6 @@ const timetableData = {
       "1:00 - 2:00": "BREAK",
       "2:00 - 3:00": "Mentoring (TG 301 - D C)",
       "3:00 - 4:00": "ES & IOT (TG 301 - D A)"
-      
     }
   },G5: {
     Monday: {
