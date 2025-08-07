@@ -2,6 +2,11 @@
 
 .dark{
   background-color: black;
+  color: white;
+}
+.dark .signup{
+  border-bottom: 8px solid rgb(40 0 255 / 42%);
+  background-color: rgb(77 74 178 / 40%);
 }
 .dark header{
   background-color: black;
@@ -12,6 +17,24 @@
 .dark .center-nav a{
   color: white;
 }
+.dark .center-nav a:hover{
+  background-color: rgba(25, 25, 146, 0.625);
+}
+.dark .center-nav{
+  background-color: #0e13606e;
+}
 .dark .toggle{
   background-color: rgba(0, 0, 0, 0.696);
+}
+.dark #about{
+  background: linear-gradient(rgb(0, 0, 0), rgb(220, 10, 228));
+  background-clip: text;
+  color: transparent;
+}
+.dark .box1{
+  background-color: rgba(46, 47, 47, 0.464);
+  box-shadow: 2px 2px 20px rgba(233, 229, 229, 0.469);
+}
+.dark .box1:hover{
+  box-shadow: 2px 2px 20px rgba(18, 208, 46, 0.246);
 }
