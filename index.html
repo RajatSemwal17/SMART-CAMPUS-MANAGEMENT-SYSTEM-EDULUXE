@@ -8,7 +8,7 @@
 
 
   <!-- font-awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
   <link rel="stylesheet" href="CSS/style.css">
   <link rel="stylesheet" href="MediaQuerries/media1.css">
@@ -48,9 +48,13 @@
 
   <main>
     <div class="front-view">
+
       <div class="title-main">
-        Welcome to EduLuxe
+        <h1 class="element">
+         
+        </h1>
       </div>
+      
       <div class="para-main">
         Your all-in-one smart campus companion for seamless student, faculty, and admin management
       </div>
@@ -72,7 +76,19 @@
       </div>
   </main>
 
+
   <script src="JS/main.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <!-- Setup and start animation! -->
+  <script>
+    var typed = new Typed('.element', {
+      strings: ["Welcome to EduLuxe", "Empowering Smarter Campuses", "Your Digital Campus Companion"],
+      typeSpeed: 80,
+      backSpeed:80,
+      loop:true
+    });
+  </script>
 
 </body>
 </html>

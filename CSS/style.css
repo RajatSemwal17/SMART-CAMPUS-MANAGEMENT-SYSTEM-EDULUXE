@@ -10,21 +10,23 @@
   font-family: "JetBrains Mono", monospace;
   user-select: none;
 }
-
 nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+body{
+  overflow-x: hidden;
+}
 header{
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
   height: 4em;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000 ;
+  animation: fadeIn 0.8s ease-in-out;
 }
 .logo {
   position: relative;
@@ -101,6 +103,8 @@ header{
 }
 main{
   position: relative;
+  filter: blur(1);
+  animation: fadeIn 0.8s ease-in-out;
 }
 .nav-btns-main{
   display: none;
@@ -188,18 +192,24 @@ main{
   object-fit:cover;
 }
 
-.title-main {
+.title-main .element{
+  padding: 1em;
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 4rem;
-  color: rgb(26, 4, 37);
+  color: rgb(151, 23, 214);
   font-weight: bold;
   letter-spacing: 3px;
   z-index: 2;
   font-family: "Anton", sans-serif;
-  width: 10em;
+  /* width: 10em; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
 }
 .para-main {
   position: absolute;

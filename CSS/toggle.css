@@ -1,15 +1,19 @@
 /* toggle */
 
 .dark{
-  background-color: black;
+  background-color: #02021e;
   color: white;
 }
+
+/* .dark .toggle{
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' d='M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z'/></svg>");
+} */
 .dark .signup{
   border-bottom: 8px solid rgb(40 0 255 / 42%);
   background-color: rgb(77 74 178 / 40%);
 }
 .dark header{
-  background-color: black;
+  background-color: #02021e;
 }
 .dark .center-nav{
   border: 1px solid white;
@@ -32,9 +36,37 @@
   color: transparent;
 }
 .dark .box1{
-  background-color: rgba(46, 47, 47, 0.464);
+  background-color: rgb(0, 0, 0);
   box-shadow: 2px 2px 20px rgba(233, 229, 229, 0.469);
+}
+.dark .cnt{
+  color: rgb(255, 255, 255);
+
 }
 .dark .box1:hover{
   box-shadow: 2px 2px 20px rgba(18, 208, 46, 0.246);
+}
+.dark #about-tt{
+  background: linear-gradient(to right, #00f5ff, #0066ff, #7a00ff);
+  background-clip: text;
+  color: transparent;
+}
+.dark .find-group{
+  box-shadow: 0 8px 10px rgba(193, 189, 189, 0.15);
+}
+.dark label[for="groupSelect"]{
+  color: white;
+}
+.dark .selectGroup{
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0.1));
+}
+
+.dark th,.dark td{
+  border: 1px solid white;
+}
+.dark tbody tr{
+  background-color: rgb(0, 0, 0);
+}
+.dark td:hover{
+  background-color: rgba(23, 208, 228, 0.74);
 }
