@@ -251,8 +251,9 @@ ul{
 .footer{
   border-top-left-radius: 40%;
   border-top-right-radius: 40%;
-	background: linear-gradient(180deg, #000000, #24262beb);
+  background: linear-gradient(180deg, #ffffff, #f4f5f7);
   padding: 70px 0;
+  box-shadow: 2px 2px 20px rgba(125, 124, 124, 0.645);
 }
 .footer-col{
    width: 25%;
@@ -260,7 +261,7 @@ ul{
 }
 .footer-col h4{
 	font-size: 18px;
-	color: #ffffff;
+	color: #000000;
 	text-transform: capitalize;
 	margin-bottom: 35px;
 	font-weight: 500;
@@ -283,10 +284,9 @@ ul{
   position: relative;
 	font-size: 16px;
 	text-transform:  capitalize;
-	color: #ffffff;
 	text-decoration: none;
 	font-weight: 300;
-	color: #bbbbbb;
+	color: #00000097;
 	display: inline-block;
 	transition: all 0.3s ease;
 }
@@ -296,7 +296,7 @@ ul{
   bottom: 0px;
   content: "";
   background:linear-gradient(to left,rgb(47, 255, 0),rgb(249, 211, 0));
-  height:1px;
+  height:2px;
   width: 100%;
   transform-origin: left;
   transform: scaleX(0);
@@ -310,24 +310,24 @@ ul{
 }
 
 .footer-col ul li a:hover{
-	color: #ffffff;
+	color: #000000;
 }
 .footer-col .social-links a{
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	background-color: rgba(255,255,255,0.2);
+	background-color:rgba(83, 64, 250, 0.638);
 	margin:0 10px 10px 0;
 	text-align: center;
 	line-height: 40px;
 	border-radius: 50%;
 	color: #ffffff;
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 }
 .footer-col .social-links a:hover{
-	color: #003dd7;
-  transform: scale(1.5);
-	background-color: #ffffff;
+	color: rgb(255, 255, 255);
+  transform: scale(1.4);
+	background-color: rgb(83 64 250);
 }
 
 .tooltip {

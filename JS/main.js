@@ -1,7 +1,7 @@
 const hamburger = document.querySelector('.hamburger');
 const nav_btns = document.querySelector('.nav-btns');
 const centerNav = document.querySelector('.center-nav');
-let body = document.querySelector('body');
+// let body = document.querySelector('body');
 let curr = 'No';
 hamburger.addEventListener('click', () => {
   if (curr === 'No') {

@@ -11,14 +11,14 @@
     
   width: 70vw;
   height: 100vh;
-  background:linear-gradient(rgb(0, 0, 255),rgba(226, 0, 0, 0.782));
+  background:linear-gradient(#7F55B1,#9B7EBD);
   display: flex;
   flex-direction: column;
   justify-content: space-around ;
   align-items: center;
   gap: 1.5em;
   
-  font-size: 1em;
+  font-size: 1.2em;
   z-index: 10;
   border-radius: 0;
   transform: translate(-100vw);
@@ -68,7 +68,7 @@
   .hamburger i{
     font-size: 1.5em;
     background:linear-gradient(to bottom, rgb(255, 0, 234),rgb(8, 134, 130));
-    background-clip: text;
+    background-clip: text;  
     color: transparent;
     position: absolute;
     right: 1em;
@@ -137,5 +137,11 @@
   }
   .para{
     font-size: 1.2em;
+  }
+  #about-tt{
+    font-size: 2.7em;
+  }
+  label[for="groupSelect"]{
+    font-size: 1em;
   }
 }
