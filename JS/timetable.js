@@ -204,7 +204,7 @@ generate.addEventListener('click', () => {
   }
 
   // Start building the table HTML;
-  let html = `kejrfb;oub<thead>
+  let html = `<thead>
   <tr><th>TIME</th>
   `;
 
