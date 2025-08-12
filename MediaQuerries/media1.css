@@ -40,11 +40,16 @@
   .center-nav a:nth-child(7) {
     animation-delay: 1.2s; /* Staggered effect */
   }
-  .center-nav i{
-    font-size: 1em;
-    color: rgb(255, 0, 0);
-    background-color: blue;
-    text-align: left;
+  .center-nav a i{
+    color: rgb(107, 63, 63);
+    display: block;
+    font-size: 1.2em;
+    transform: translate(-10%,50%);
+    color: white;
+  }
+  .center-nav a:hover i{
+    color: rgb(13, 0, 255);
+    box-shadow:0px 0px 9px #00BFFF, 0 0 10px #00BFFF;
   }
   .center-nav a::before{
     background:linear-gradient(transparent);

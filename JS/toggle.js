@@ -1,5 +1,4 @@
 const toggle = document.querySelector('.toggle');
-// const body = document.body;
 let currMode = localStorage.getItem('mode') || 'light';
 
 if (currMode === 'dark') {

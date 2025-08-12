@@ -65,6 +65,10 @@ header{
   color: rgb(79, 77, 77);
   font-weight: bold;
 }
+.center-nav a i{
+  color: white;
+  display: none;
+}
 .center-nav a{
   position: relative;
   transition: all 0.3s ease-in-out 0s;
@@ -75,7 +79,7 @@ header{
   left: 0%;
   bottom: -1px;
   content: "";
-  background:linear-gradient(to left,rgb(0, 255, 4),blue);
+  background:linear-gradient(to left,rgb(179, 0, 255),rgb(0, 255, 255));
   height: 4px;
   width: 100%;
   transform-origin: right;
@@ -362,7 +366,3 @@ ul{
     width: 100%;
 }
 }
-
-
-
-
