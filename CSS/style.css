@@ -18,6 +18,19 @@ nav{
 body{
   overflow-x: hidden;
 }
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+}
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* behind content */
+}
 header{
   background-color: rgb(255, 255, 255);
   height: 5em;

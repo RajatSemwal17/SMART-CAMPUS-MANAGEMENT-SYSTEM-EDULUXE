@@ -64,13 +64,13 @@
 }
 
 .image {
-  background-image: url("../images/service.png");
   height: 120px;
   width: 120px;
   background-size: cover;
   background-position: center;
   transition: transform 0.4s ease-in-out;
   border-radius: 12px;
+  filter: invert(1);
 }
 
 .box1:hover .image {
