@@ -1,6 +1,6 @@
 export const products = [{
   title: 'Student Services',
-  image:'"../images/student.png"',
+  image:'images/student.png',
   para : 'Manage attendance, ID cards, and academic info in one place.'
 },{
   title: 'Notices & Announcements',
@@ -16,3 +16,4 @@ export const products = [{
   para : 'Access lecture notes, assignments, and learning resources in one place.'
 }
 ]
+
