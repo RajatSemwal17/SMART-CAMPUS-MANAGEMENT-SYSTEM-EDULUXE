@@ -70,7 +70,6 @@
   background-position: center;
   transition: transform 0.4s ease-in-out;
   border-radius: 12px;
-  filter: invert(1);
 }
 
 .box1:hover .image {
@@ -96,8 +95,9 @@
 
 .cnt {
   margin-top: 10px;
+  margin-bottom: 42px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   font-family: "Titillium Web", sans-serif;
   color: #000000;

@@ -11,6 +11,7 @@ products.forEach((product) => {
         ${product.para}
       </div>
     </div>
+    <br>
   `
 })
 console.log(productHTML);

@@ -171,3 +171,114 @@ label[for="groupSelect"] {
   color: transparent;
   margin-bottom: 1em;
 }
+
+.learning{
+  margin-top: 5em;
+  display: flex;
+  gap: 3em;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.learning-Resource{
+  text-align: center;
+  font-size: 3em;
+  background-color: rgb(240, 237, 237);
+  padding: 20px;
+}
+.card {
+  margin-bottom: 2em;
+  background-color: #ffffff;
+  width: 31em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15em;
+  gap: 15px;
+  border-radius: 10px;
+  position: relative;
+  transition: all 0.2s ease-in-out 0s;
+  box-shadow: 1px 1px 10px rgb(222, 224, 225);
+  cursor: pointer;
+}
+.card:hover{
+  box-shadow: 0 5px 15px rgba(57, 56, 56, 0.3);
+  transform:scale(1.05);
+}
+
+.card::before{
+  position: absolute;
+  right: 0%;
+  top: 1.5%;
+  content: "";
+  background:linear-gradient(to bottom,rgb(255, 0, 212),rgb(255, 0, 81));
+  height:96%;
+  width: 4px;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.3s ease-in-out 0s;
+  border-radius: 10px;
+}
+.card:hover::before{
+  transform: scaleY(1);
+}
+.card a i{
+  position: absolute;
+  font-size: 1.3em;
+  transition: left 0.2s linear;
+  animation: return 0.2s linear forwards;
+  margin-left: 10px;
+}
+.card:hover a i{
+  animation: move 0.2s linear forwards;
+  font-size: 1.2em;
+}
+
+@keyframes move{
+  from{
+    left: 4em;  
+  }
+  to{
+    left: 10em;
+  }
+}
+@keyframes return{
+  from{
+    left: 10em;  
+  }
+  to{
+    left: 4em;
+  }
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1.7em;
+  color: rgb(221, 0, 255);
+}
+.card:hover h3{
+  color: aqua;
+}
+.card-content p {
+  margin: 5px 0 0;
+  font-size: 1em;
+  color: #808080;
+}
+
+.card a {
+  color: #69f10e;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  position: absolute;
+  bottom: 1.3em;
+}

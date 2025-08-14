@@ -21,10 +21,9 @@
 .dark .footer-col .social-links a:hover{
    background-color: rgb(83 64 250);
 }
-
-/* .dark .toggle{
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' d='M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z'/></svg>");
-} */
+.dark .image{
+  filter: invert(1);
+}
 .dark .signup{
   border-bottom: 8px solid rgb(40 0 255 / 42%);
   background-color: rgb(77 74 178 / 40%);
@@ -86,4 +85,28 @@
 }
 .dark td:hover{
   background-color: rgba(23, 208, 228, 0.74);
+}
+
+
+
+
+/* timetable learning section */
+
+.dark .card {
+  background-color: #2a2a3d;
+  box-shadow: 0 5px 15px rgba(77, 76, 76, 0.557);
+  /* margin-left: 2em; */
+  position: relative;
+  transition: all 0.2s ease-in-out 0s;
+  cursor: pointer;
+}
+.dark .card:hover{
+  box-shadow: 1px 1px 10px rgb(215, 215, 215);
+  transform:scale(1.05);
+}
+.dark .card img {
+  filter: invert(1);
+}
+.dark .learning-Resource{
+  background-color: rgb(6 15 52);
 }

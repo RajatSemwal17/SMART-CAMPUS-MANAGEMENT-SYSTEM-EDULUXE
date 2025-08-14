@@ -234,3 +234,22 @@ generate.addEventListener('click', () => {
     html += '</tbody>';
     table.innerHTML = html;
 });
+
+
+import {learning} from './data/products.js';
+
+let learnHTML = '';
+learning.forEach((learn) => {
+  learnHTML += `
+    <div class="card" onclick="window.location.href='${learn.href}'">
+      <img src="images/courses.png" alt="Logo">
+      <div class="card-content">
+        <h3>${learn.heading}</h3>
+        <p>SOME GOOD YOUTUBE CHANNELS</p>
+        <a>View Page <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+    </div>
+  `
+})
+document.querySelector('.learning').innerHTML = learnHTML;
