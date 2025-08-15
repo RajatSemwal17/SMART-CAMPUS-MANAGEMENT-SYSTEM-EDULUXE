@@ -1,4 +1,5 @@
 /* Style the entire table */
+
 .table-cover{
   background-color: red;
 }
@@ -175,7 +176,7 @@ label[for="groupSelect"] {
 .learning{
   margin-top: 5em;
   display: flex;
-  gap: 3em;
+  gap: 2em;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;

@@ -175,12 +175,21 @@ main{
     width: 23em;
   }
 }
-@media (max-width:780px){
+@media (max-width:792px){
+  .learning{
+    gap: 1em;
+  }
+}
+
+@media (max-width:784px){
   table{
     font-size: 6.5px;
   }
    .title-main .element{
     font-size: 2em;
+  }
+  .card{
+    width: 25em;
   }
 }
 
