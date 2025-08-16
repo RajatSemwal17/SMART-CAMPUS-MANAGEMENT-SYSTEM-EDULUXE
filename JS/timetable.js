@@ -241,15 +241,56 @@ import {learning} from './data/products.js';
 let learnHTML = '';
 learning.forEach((learn) => {
   learnHTML += `
-    <div class="card" onclick="window.location.href='${learn.href}'">
-      <img src="images/courses.png" alt="Logo">
-      <div class="card-content">
-        <h3>${learn.heading}</h3>
+  <div class="card">
+  <img src="images/courses.png" alt="Logo">
+  <i class="fa-solid fa-star star"></i>
+      <div class="card-content" onclick="window.location.href='${learn.href}'">
+      <h3>${learn.heading} <i class="fa-brands fa-youtube" style="color:red;"></i></h3>
+      
         <p>SOME GOOD YOUTUBE CHANNELS</p>
         <a>View Page <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-    </div>
+        </div>
+        </div>
+        </div>
   `
 })
 document.querySelector('.learning').innerHTML = learnHTML;
+
+
+
+
+
+let savedStar = JSON.parse(localStorage.getItem('star-mark')) || [];
+let stars = document.querySelectorAll('.star');
+let marked_titles = document.querySelector('.marked-titles');
+
+function updateTitles(){
+  marked_titles.innerHTML = '';
+  savedStar.forEach((a , i) => {
+    if(a === 'mark')
+    marked_titles.innerHTML += `<span>${learning[i].heading}</span>`
+  });
+}
+
+stars.forEach((star , index) => {
+  if(savedStar[index] === 'mark'){
+    star.style.color = 'rgba(243, 197, 13, 1)';
+  }
+  else{
+    star.style.color = 'rgb(128, 128, 125)';
+  }  
+
+  star.addEventListener('click' , () => {
+    if(savedStar[index] === 'mark'){
+      star.style.color = 'rgb(128, 128, 125)';
+      savedStar[index] = 'unmark';
+    }
+    else{
+      star.style.color = 'rgba(243, 197, 13, 1)';
+      savedStar[index] = 'mark';
+    }
+    localStorage.setItem('star-mark' , JSON.stringify(savedStar));
+    updateTitles();
+  });
+});
+updateTitles();

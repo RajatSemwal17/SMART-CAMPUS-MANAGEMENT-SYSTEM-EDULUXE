@@ -256,7 +256,14 @@ label[for="groupSelect"] {
   width: 150px;
   height: 150px;
 }
-
+.star{
+  color: rgb(128, 128, 125);
+  font-size: 1.3em;
+  position: absolute;
+  top: 10%;
+  right:10%;
+  transition: all 0.2s ease-in-out;
+}
 .card-content {
   flex: 1;
 }
@@ -282,4 +289,25 @@ label[for="groupSelect"] {
   font-size: 1.2em;
   position: absolute;
   bottom: 1.3em;
+}
+
+.marked-titles{
+  margin-top: 3em;
+  text-align: center;
+  font-size: 1.6em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.marked-titles span{
+  margin-bottom: 1em;
+  width: 100%;
+  margin-left: 5em;
+  margin-right: 5em;
+  background-color: #f8f8f8b5;
+  padding: 10px 30px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.marked-titles span:hover{
+  background-color: #e6e8ff;
 }

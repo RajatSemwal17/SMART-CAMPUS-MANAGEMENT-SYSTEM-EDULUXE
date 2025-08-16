@@ -231,6 +231,9 @@ main{
   .learning-Resource{
     font-size: 2em;
   }
+  .marked-titles{
+    font-size: 1em;
+  }
 }
 @media (max-width:460px){
   .card{

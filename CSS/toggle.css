@@ -110,3 +110,10 @@
 .dark .learning-Resource{
   background-color: rgb(6 15 52);
 }
+
+.dark .marked-titles span{
+  background-color: #11284a5e;
+}
+.dark .marked-titles span:hover{
+  background-color: #0a7e8f6b;
+}
