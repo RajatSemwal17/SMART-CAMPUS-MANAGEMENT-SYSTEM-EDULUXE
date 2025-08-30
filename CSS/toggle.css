@@ -117,3 +117,19 @@
 .dark .marked-titles span:hover{
   background-color: #0a7e8f6b;
 }
+
+/* about-us */
+.dark .about-us img{
+  border: 1px solid aqua;
+  box-shadow: 1px 1px 5px aqua;
+}
+.dark .about-us h1{
+  color: #00ffd6;
+  text-shadow: 2px 2px 50px #00ffd6;
+}
+.dark .description-2{
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.378);
+}
+.dark .coder{
+  animation: glow 2s infinite alternate;
+}
