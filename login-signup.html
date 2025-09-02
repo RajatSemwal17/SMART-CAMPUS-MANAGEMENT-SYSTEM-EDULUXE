@@ -4,23 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOGIN/SIGNUP</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="CSS/login-signup.css" />
     <link rel="stylesheet" href="MediaQuerries/media1.css">
   </head>
   <body>
+
+    <div id="toast">
+      <p> </p>
+      <div class="loader">
+        <div></div>
+      </div>
+    </div>
+
     <div class="form">
       <div class="login">
         <h2>Log In</h2>
         <p>Welcome to Eduluxe Your Your Digital Campus Companion.</p>
-        
-        <br /><br />
+        <br><br>
         <label for="">Email</label>
         <br />
-        <input type="text" placeholder="" />
+        <input type="text" placeholder="" 
+        id="input" />
+
         <br /><br />
         <label for="">Password</label>
         <br />
-        <input type="password" placeholder="" />
+        <input type="password" placeholder="" id="password" />
         <br />
         <img src="" alt="" />
         <a href="" style="font-size: 0.8em">forgot password?</a><br />
@@ -52,5 +68,6 @@
       BACK TO HOME
     </button>
     </div>
+    <script src="JS/login-signup.js"></script>
   </body>
   </html>
