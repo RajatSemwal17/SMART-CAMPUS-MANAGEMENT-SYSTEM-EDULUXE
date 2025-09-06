@@ -187,7 +187,7 @@ label[for="groupSelect"] {
   background-color: rgb(240, 237, 237);
   padding: 20px;
 }
-.card {
+.my-card {
   margin-bottom: 2em;
   background-color: #ffffff;
   width: 31em;
@@ -202,12 +202,12 @@ label[for="groupSelect"] {
   box-shadow: 1px 1px 10px rgb(222, 224, 225);
   cursor: pointer;
 }
-.card:hover{
+my-card:hover{
   box-shadow: 0 5px 15px rgba(57, 56, 56, 0.3);
   transform:scale(1.05);
 }
 
-.card::before{
+.my-card::before{
   position: absolute;
   right: 0%;
   top: 1.5%;
@@ -220,17 +220,17 @@ label[for="groupSelect"] {
   transition: transform 0.3s ease-in-out 0s;
   border-radius: 10px;
 }
-.card:hover::before{
+.my-card:hover::before{
   transform: scaleY(1);
 }
-.card a i{
+.my-card a i{
   position: absolute;
   font-size: 1.3em;
   transition: left 0.2s linear;
   animation: return 0.2s linear forwards;
   margin-left: 10px;
 }
-.card:hover a i{
+.my-card:hover a i{
   animation: move 0.2s linear forwards;
   font-size: 1.2em;
 }
@@ -252,7 +252,7 @@ label[for="groupSelect"] {
   }
 }
 
-.card img {
+.my-card img {
   width: 150px;
   height: 150px;
 }
@@ -273,7 +273,7 @@ label[for="groupSelect"] {
   font-size: 1.7em;
   color: rgb(221, 0, 255);
 }
-.card:hover h3{
+.my-card:hover h3{
   color: aqua;
 }
 .card-content p {
@@ -282,8 +282,8 @@ label[for="groupSelect"] {
   color: #808080;
 }
 
-.card a {
-  color: #69f10e;
+.my-card a {
+  color: #65fb01;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2em;
@@ -310,4 +310,22 @@ label[for="groupSelect"] {
 }
 .marked-titles span:hover{
   background-color: #e6e8ff;
+}
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.loader img{
+  height: 200px;
+}
+
+.accordion-item{
+  max-width: 80%;
+  margin: auto;
+  background-color: red;
+}
+.accordion-body{
+  background-color: rgb(198, 210, 242);
 }

@@ -92,7 +92,7 @@
 
 /* timetable learning section */
 
-.dark .card {
+.dark .my-card {
   background-color: #2a2a3d;
   box-shadow: 0 5px 15px rgba(77, 76, 76, 0.557);
   /* margin-left: 2em; */
@@ -100,11 +100,11 @@
   transition: all 0.2s ease-in-out 0s;
   cursor: pointer;
 }
-.dark .card:hover{
+.dark .my-card:hover{
   box-shadow: 1px 1px 10px rgb(215, 215, 215);
   transform:scale(1.05);
 }
-.dark .card img {
+.dark .my-card img {
   filter: invert(1);
 }
 .dark .learning-Resource{
@@ -132,4 +132,31 @@
 }
 .dark .coder{
   animation: glow 2s infinite alternate;
+}
+
+/* Dark mode accordion */
+.dark .accordion-button {
+  background-color: #1e293b !important; /* dark slate */
+  color: #f8f9fa !important;           /* light text */
+  box-shadow: none !important;
+}
+
+.dark .accordion-button:not(.collapsed) {
+  background-color: #334155 !important; /* slightly lighter slate */
+  color: #f8f9fa !important;
+  box-shadow: none !important;
+}
+
+.dark .accordion-body {
+  background-color: #0f172a; /* deep dark */
+  color: #e2e8f0;           /* light gray text */
+}
+
+/* Remove focus ring highlight */
+.dark .accordion-button:focus {
+  box-shadow: none !important;
+}
+.dark .accordion-button::after{
+  background-color: rgba(228, 229, 233, 0.244);
+  border-radius: 5px;
 }

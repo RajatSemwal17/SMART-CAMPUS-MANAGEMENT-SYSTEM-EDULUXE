@@ -202,7 +202,7 @@ generate.addEventListener('click', () => {
     alert("Please Select An Option.");
     return;
   }
-
+  table.innerHTML = "";
   // Start building the table HTML;
   let html = `<thead>
   <tr><th>TIME</th>
@@ -232,8 +232,15 @@ generate.addEventListener('click', () => {
     html += '</tr>';
   });
     html += '</tbody>';
-    table.innerHTML = html;
+
+    document.querySelector('.loader').style.display='flex';
+  setTimeout(() => {
+    document.querySelector('.loader').style.display='none';
+    table.innerHTML = html;  
+  },4000)
 });
+
+
 
 
 import {learning} from './data/products.js';
@@ -241,14 +248,14 @@ import {learning} from './data/products.js';
 let learnHTML = '';
 learning.forEach((learn) => {
   learnHTML += `
-  <div class="card">
+  <div class="my-card">
   <img src="images/courses.png" alt="Logo">
   <i class="fa-solid fa-star star"></i>
       <div class="card-content" onclick="window.location.href='${learn.href}'">
       <h3>${learn.heading} <i class="fa-brands fa-youtube" style="color:red;"></i></h3>
       
         <p>SOME GOOD YOUTUBE CHANNELS</p>
-        <a>View Page <i class="fa-solid fa-arrow-right"></i></a>
+        <a style="color:#65fb01;">View Page <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         </div>
         </div>
