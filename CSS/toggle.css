@@ -93,7 +93,7 @@
 /* timetable learning section */
 
 .dark .my-card {
-  background-color: #2a2a3d;
+  background-color: #040f3d;
   box-shadow: 0 5px 15px rgba(77, 76, 76, 0.557);
   /* margin-left: 2em; */
   position: relative;
@@ -101,7 +101,7 @@
   cursor: pointer;
 }
 .dark .my-card:hover{
-  box-shadow: 1px 1px 10px rgb(215, 215, 215);
+  box-shadow: 1px 1px 10px rgb(116, 114, 114);
   transform:scale(1.05);
 }
 .dark .my-card img {

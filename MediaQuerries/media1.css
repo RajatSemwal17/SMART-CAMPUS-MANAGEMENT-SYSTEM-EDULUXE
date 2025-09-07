@@ -232,7 +232,7 @@ main{
    .title-main .element{
     font-size: 2em;
   }
-  .card{
+  .my-card{
     width: 25em;
   }
   .front-image img{
@@ -280,7 +280,7 @@ main{
   label[for="groupSelect"]{
     font-size: 1em;
   }
-  .card{
+  .my-card{
     width: 25em;
   }
   .learning-Resource{
@@ -307,13 +307,13 @@ main{
   }
 }
 @media (max-width:460px){
-  .card{
+  .my-card{
     width: 17em;
   }
   .card-content h3 {
     font-size: 1.4em;
   }
-  .card img{
+  .my-card img{
     height: 80px;
     width: 80px;
   }
