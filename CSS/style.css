@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+
 
 *{
   margin: 0;
@@ -77,6 +80,7 @@ header{
   transition: all 0.2s ease-in-out 0s;
   color: rgb(79, 77, 77);
   font-weight: bold;
+  text-decoration: none;
 }
 .center-nav a i{
   color: white;
@@ -422,4 +426,20 @@ ul{
   .footer-col{
     width: 100%;
 }
+}
+
+
+.made-by-love{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.made-by-love p{
+  font-family: "Abel", sans-serif;
+  text-align: center; 
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: lighter;
+  box-shadow: 1px 1px 10px rgb(186, 185, 185);
 }
