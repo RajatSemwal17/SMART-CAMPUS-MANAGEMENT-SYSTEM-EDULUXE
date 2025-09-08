@@ -14,7 +14,7 @@ body{
   background-color: rgba(220, 187, 237, 0.27);
 }
 .form{
-  margin-top: 5em;
+  margin-top: 1em;
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -22,8 +22,7 @@ body{
 }
 
 .login{
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
+  border-radius: 20px;
   padding: 1.5em;
   height: 550px;
   width: 500px;
@@ -223,4 +222,10 @@ body{
 .signup{
   display: none;
   height: 750px;
+}
+#LOGIN-A, #SIGNUP-A{
+  color: rgb(151, 147, 235);
+}
+#LOGIN-A:hover, #SIGNUP-A:hover{
+  color: rgb(0, 42, 255);
 }
