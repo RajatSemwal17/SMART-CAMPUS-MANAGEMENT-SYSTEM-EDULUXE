@@ -173,6 +173,9 @@ main{
     margin-top: 4em;
     margin-bottom: 1em;
   }
+  .signup{
+    height: 800px;
+  } 
 }
 
 @media (max-width:916px){
@@ -208,6 +211,10 @@ main{
   .card{
     width: 23em;
   }
+  .signup{
+    height: 800px;
+  } 
+  
 }
 @media (max-width:792px){
   .learning{
@@ -223,6 +230,9 @@ main{
   .loginImage{
     display: none;
   }
+  .signup{
+    height: 800px;
+  } 
 }
 
 @media (max-width:784px){
@@ -243,6 +253,9 @@ main{
   .accordion-header .accordion-button{
     font-size: 10px;
   }
+  .signup{
+    height: 800px;
+  } 
 }
 
 
@@ -294,7 +307,7 @@ main{
     height: 600px;
   }
   .login input{
-    padding: 10px 40px;
+    padding: 10px 30px;
   }
   .google{
     padding: 0.3em 1em;
@@ -305,6 +318,9 @@ main{
   .loginImage{
     display: none;
   }
+  .signup{
+    height: 800px;
+  } 
 }
 @media (max-width:460px){
   .my-card{
