@@ -90,7 +90,7 @@
     <br><br><br><br>
 
       
-      <h1 id="notice-heading">Notices & Announcements</h1>
+    <h1 id="notice-heading">Notices & Announcements</h1>
     <p id="notice-des">Stay updated with latest announcements and important information</p>
 
 
@@ -132,23 +132,23 @@
             <h3>Campus Reopening Announcement</h3>
                 <span class="notice-date">Published: 15 August 2023</span>
         <span class="notice-category category-new">New</span>
-            <p>The college will reopen on 1st September 2023. All students are requested to complete their registration process by 25th August.</p>
+            <p>The college will reopen on 1st September 2025. All students are requested to complete their registration process by 25th August.</p>
                 <a href="#" class="read-more">Read More →</a>
         </div>
 
                 <div class="notice" data-category="urgent">
             <h3>Scholarship Application Deadline</h3>
-        <span class="notice-date">Published: 12 August 2023</span>
+        <span class="notice-date">Published: 12 September 2025</span>
                 <span class="notice-category category-urgent">Urgent</span>
-            <p>Last date to apply for the Merit Scholarship is 20th August 2023. Late applications will not be considered.</p>
+            <p>Last date to apply for the Merit Scholarship is 20th September 2025. Late applications will not be considered.</p>
         <a href="#" class="read-more">Read More →</a>
                 </div>
 
         <div class="notice" data-category="event">
                 <h3>Workshop on AI & Machine Learning</h3>
-            <span class="notice-date">Published: 10 August 2023</span>
+            <span class="notice-date">Published: 10 September 2025</span>
         <span class="notice-category category-event">Event</span>
-                <p>Department of Computer Science is organizing a 3-day workshop on AI & Machine Learning from 25th-27th August.</p>
+                <p>Department of Computer Science is organizing a 3-day workshop on AI & Machine Learning from 25th-27th September  .</p>
             <a href="#" class="read-more">Read More →</a>
         </div>
 
@@ -156,7 +156,7 @@
                 <div class="additional-notices" style="display: none;">
             <div class="notice" data-category="academic">
                     <h3>Mid-Term Examination Results</h3>
-                <span class="notice-date">Published: 8 August 2023</span>
+                <span class="notice-date">Published: 8 September 2025</span>
             <span class="notice-category category-academic">Academic</span>
                 <p>The results for the mid-term examinations are now available on the student portal.</p>
             <a href="#" class="read-more">Read More →</a>
@@ -164,17 +164,17 @@
 
                 <div class="notice" data-category="event">
             <h3>Annual Cultural Fest</h3>
-                <span class="notice-date">Published: 5 August 2023</span>
+                <span class="notice-date">Published: 5 October 2025</span>
         <span class="notice-category category-event">Event</span>
-            <p>Registrations are open for the annual cultural fest to be held on 10th September 2023.</p>
+            <p>Registrations are open for the annual cultural fest to be held on 17th September 2025.</p>
                 <a href="#" class="read-more">Read More →</a>
         </div>
 
             <div class="notice" data-category="important">
                 <h3>Library Renovation Notice</h3>
-        <span class="notice-date">Published: 3 August 2023</span>
+        <span class="notice-date">Published: 30 September 2025</span>
             <span class="notice-category category-important">Important</span>
-                <p>The central library will be closed for renovation from 20th August to 5th September.</p>
+                <p>The central library will be closed for renovation from 20th September to 28th September.</p>
         <a href="#" class="read-more">Read More →</a>
             </div>
                 </div>
@@ -274,9 +274,18 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="https://unpkg.com/supersimpledev@8.6.4/dayjs.js"></script>
     <script src="JS/main.js"></script>
     <script src="JS/toggle.js"></script>
     <script src="JS/otherBack.js"></script>
     <script src="JS/notices.js"></script>
+
+    <script>
+      const date1 = dayjs().add(2, 'day').format('YYYY-MM-DD');
+      const date2 = dayjs().add(10, 'day').format('YYYY-MM-DD');
+      const date3 = dayjs().add(15, 'day').format('YYYY-MM-DD');
+      const date4 = dayjs().add(30, 'day').format('YYYY-MM-DD');
+
+    </script>
   </body>
 </html>

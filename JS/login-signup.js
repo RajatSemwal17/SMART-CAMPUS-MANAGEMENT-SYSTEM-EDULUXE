@@ -65,3 +65,14 @@ document.addEventListener('keydown', (event) => {
     loginFormRequirements();
   }
 });
+
+let SIGNUP = document.querySelector('#SIGNUP-A')
+SIGNUP.addEventListener('click', () => {
+  document.querySelector('.signup').style.display = 'block';
+  document.querySelector('.login').style.display = 'none';
+})
+let LOGIN = document.querySelector('#LOGIN-A')
+LOGIN.addEventListener('click', () => {
+  document.querySelector('.signup').style.display = 'none';
+  document.querySelector('.login').style.display = 'block';
+})

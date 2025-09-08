@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOGIN/SIGNUP</title>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="CSS/login-signup.css" />
     <link rel="stylesheet" href="MediaQuerries/media1.css">
   </head>
   <body>
-
+    <div class="homeBTN">
+      <button class="homeBtn" onclick="window.location.href = 'index.html' ">
+      BACK TO HOME
+    </button>
+    </div>
+    
     <div id="toast">
       <p> </p>
       <div class="loader">
@@ -55,19 +60,62 @@
           </div>
         </div>
         <p style="font-size: 0.8em">
-          Already have an account? <a href="">SignUp</a>
+          Already have an account? <a id="SIGNUP-A" style="cursor: pointer;">SignUp</a>
         </p>
       </div>
-      <div class="loginImage">
+      <!-- <div class="loginImage">
         <img src="images/Data_security_27.jpg" alt="" style="background-size: cover" />
-      </div>
+      </div> -->
+
+      
+    <div class="login signup">
+  <h2>Sign Up</h2>
+  <p>Create your EduLuxe account and start your learning journey.</p>
+  <br><br>
+
+  <label for="">Full Name</label>
+  <br />
+  <input type="text" placeholder="" id="name" />
+
+  <br /><br />
+  <label for="">Email</label>
+  <br />
+  <input type="text" placeholder="" id="signup-email" />
+
+  <br /><br />
+  <label for="">Password</label>
+  <br />
+  <input type="password" placeholder="" id="signup-password" />
+
+  <br /><br />
+  <label for="">Confirm Password</label>
+  <br />
+  <input type="password" placeholder="" id="confirm-password" />
+
+  <br /><br />
+  <div class="btn">
+    <button class="login-btn">SIGN UP</button>
+  </div>
+
+  <p>----------- Or Sign Up With -----------</p>
+
+  <div class="google-facebook">
+    <div class="google">
+      <img src="images/google.png" alt="Google" />
     </div>
-    <!-- <script src="JS/login-signup.js"></script> -->
-    <div class="homeBTN">
-      <button class="homeBtn" onclick="window.location.href = 'index.html' ">
-      BACK TO HOME
-    </button>
+    <div class="facebook">
+      <img src="images/facebook.png" alt="Facebook" />
     </div>
+  </div>
+
+  <p style="font-size: 0.8em">
+    Already have an account? <a id="LOGIN-A" style="cursor: pointer;">Log In</a>
+  </p>
+</div>
+</div>
+
+
+<!-- <script src="JS/login-signup.js"></script> -->
     <script src="JS/login-signup.js"></script>
   </body>
   </html>
