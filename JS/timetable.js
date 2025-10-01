@@ -215,11 +215,13 @@ generate.addEventListener('click', () => {
       </th>
     `
   })
+
   html += "</tr></thead><tbody>";
 
   // Loop through Each Day:
   days.forEach((day) => {
     html += `<tr><td><strong>${day}</strong></td>`;
+
 
     timeSlots.forEach((time) => {
     const val = timetableData[selectedGroup][day][time] || "";
@@ -262,8 +264,6 @@ learning.forEach((learn) => {
   `
 })
 document.querySelector('.learning').innerHTML = learnHTML;
-
-
 
 
 
