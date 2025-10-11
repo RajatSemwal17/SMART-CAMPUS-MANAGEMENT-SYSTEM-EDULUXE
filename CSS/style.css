@@ -11,13 +11,14 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: "JetBrains Mono", monospace;
-  user-select: none;
+  /* user-select: none; */
 }
 nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 body{
   overflow-x: hidden;
 }

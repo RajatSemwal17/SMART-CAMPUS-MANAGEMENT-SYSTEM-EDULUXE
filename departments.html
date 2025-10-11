@@ -3,251 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Management System - Department Portal</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-     
+    <title>Departments Portal</title>
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.freepik.com/512/3624/3624948.png"
+    />
+
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/toggle.css" />
+    <link rel="stylesheet" href="CSS/timetable.css">
     <link rel="stylesheet" href="CSS/departments.css">
+    <link rel="stylesheet" href="MediaQuerries/media1.css" />
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="nav-title">Campus Management System</h1>
-            <!-- <button class="theme-toggle" id="themeToggle">🌙</button> -->
-        </div>
-    </nav>
 
-    <!-- Main Department Portal -->
-    <div class="container" id="mainPortal">
-        <div class="portal-header">
-            <h2>Department Portal</h2>
-            <p>Select your role to continue</p>
+    <div id="tsparticles"></div>
+
+    <header>
+      <nav>
+        <div class="logo" onclick="window.location.href='index.html' ">
+          <img src="images/eduluxe.png" alt="" />
         </div>
-        
-        <div class="portal-options">
-            <div class="portal-card student-card" onclick="showStudentPage()">
-                <div class="card-icon">👨‍🎓</div>
-                <h3>Student</h3>
-                <p>Access student dashboard and information</p>
+
+        <div class="center-nav">
+          <a href="index.html"> <i class="fa-solid fa-house"></i> Home </a>
+          <a href="about.html">
+            <i class="fa-solid fa-circle-info"></i> About
+          </a>
+          <a href="timetable.html">
+            <i class="fa-solid fa-book"></i> Academics
+          </a>
+          <a href="departments.html" style="background-color: #00ffd275">
+            <i class="fa-solid fa-building"></i> Departments
+          </a>
+          <a href="notices.html" >
+            <i class="fa-solid fa-bullhorn"></i> Notices
+          </a>
+          <a href="events.html">
+            <i class="fa-solid fa-calendar-days"></i> Events
+          </a>
+          <a href="contact.html" class="contact-link">
+            <i class="fa-solid fa-phone"></i> Contact
+          </a>
+        </div>
+
+        <div class="nav-btns">
+          <div class="login">
+            <i class="fa-solid fa-angle-right right"></i> LOGIN
+            <i class="fa-solid fa-angle-left left"></i>
+          </div>
+          <div class="signup">
+            <i class="fa-solid fa-angle-right right2"></i> SIGNUP
+          </div>
+        </div>
+        <div class="toggle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 sun"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            />
+          </svg>
+        </div>
+        <div class="hamburger">
+          <i class="fa-solid fa-burger"></i>
+        </div>
+      </nav>
+    </header>
+    <br><br><br><br>
+
+    <div class="container">
+        <br><br><br>
+
+        <!-- Portal Selection -->
+        <div id="portalSelection" class="portal-selection">
+            <div class="portal-card" data-portal="student">
+                <div class="icon">🎓</div>
+                <h2>Student Portal</h2>
+                <p>Access attendance, grades, assignments and more</p>
+                <button class="btn btn-primary">Enter Portal</button>
+            </div>
+            <div class="portal-card" data-portal="teacher">
+                <div class="icon">👨‍🏫</div>
+                <h2>Teacher Portal</h2>
+                <p>Manage classes, attendance, grades and students</p>
+                <button class="btn btn-primary">Enter Portal</button>
+            </div>
+        </div>
+<br><br><br>
+        <!-- Student Dashboard -->
+        <div id="studentDashboard" class="dashboard hidden">
+            <div class="dashboard-header">
+                <h2>Student Dashboard</h2>
+                <button class="btn btn-back" onclick="goBack()">← Back to Portals</button>
             </div>
             
-            <div class="portal-card staff-card" onclick="showStaffPage()">
-                <div class="card-icon">👨‍🏫</div>
-                <h3>Staff</h3>
-                <p>Access staff dashboard and management</p>
+            <div class="user-info">
+                <div class="avatar">👤</div>
+                <div>
+                    <h3 id="studentName">John Doe</h3>
+                    <p>Student ID: STU2024001</p>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>📊 Attendance</h3>
+                    <div class="stat-large">87%</div>
+                    <p>Present Days: 87/100</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 87%"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>📚 Assignments</h3>
+                    <ul class="info-list">
+                        <li>
+                            <span>Mathematics - Quiz 3</span>
+                            <span class="badge badge-warning">Pending</span>
+                        </li>
+                        <li>
+                            <span>Physics - Lab Report</span>
+                            <span class="badge badge-success">Submitted</span>
+                        </li>
+                        <li>
+                            <span>English - Essay</span>
+                            <span class="badge badge-danger">Overdue</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🎯 Grades</h3>
+                    <div class="grades-grid">
+                        <div class="grade-item">
+                            <span>Mathematics</span>
+                            <span class="grade">A-</span>
+                        </div>
+                        <div class="grade-item">
+                            <span>Physics</span>
+                            <span class="grade">B+</span>
+                        </div>
+                        <div class="grade-item">
+                            <span>English</span>
+                            <span class="grade">A</span>
+                        </div>
+                        <div class="grade-item">
+                            <span>Chemistry</span>
+                            <span class="grade">B</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>📅 Today's Schedule</h3>
+                    <ul class="schedule-list">
+                        <li>
+                            <span class="time">09:00 AM</span>
+                            <span>Mathematics - Room 201</span>
+                        </li>
+                        <li>
+                            <span class="time">11:00 AM</span>
+                            <span>Physics Lab - Room 305</span>
+                        </li>
+                        <li>
+                            <span class="time">02:00 PM</span>
+                            <span>English Literature - Room 105</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher Dashboard -->
+        <div id="teacherDashboard" class="dashboard hidden">
+            <div class="dashboard-header">
+                <h2>Teacher Dashboard</h2>
+                <button class="btn btn-back" onclick="goBack()">← Back to Portals</button>
+            </div>
+            
+            <div class="user-info">
+                <div class="avatar">👨‍🏫</div>
+                <div>
+                    <h3 id="teacherName">Dr. Sarah Smith</h3>
+                    <p>Teacher ID: TCH2024015</p>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>👥 Total Students</h3>
+                    <div class="stat-large">156</div>
+                    <p>Across 4 classes</p>
+                </div>
+
+                <div class="card">
+                    <h3>📊 Class Attendance</h3>
+                    <div class="attendance-list">
+                        <div class="attendance-item">
+                            <span>Class 10-A (Physics)</span>
+                            <span class="attendance-percent">92%</span>
+                        </div>
+                        <div class="attendance-item">
+                            <span>Class 10-B (Physics)</span>
+                            <span class="attendance-percent">88%</span>
+                        </div>
+                        <div class="attendance-item">
+                            <span>Class 11-A (Physics)</span>
+                            <span class="attendance-percent">85%</span>
+                        </div>
+                        <div class="attendance-item">
+                            <span>Class 11-B (Physics)</span>
+                            <span class="attendance-percent">90%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>📝 Pending Tasks</h3>
+                    <ul class="info-list">
+                        <li>
+                            <span>Grade Class 10-A Quiz</span>
+                            <span class="badge badge-warning">28 Papers</span>
+                        </li>
+                        <li>
+                            <span>Review Lab Reports</span>
+                            <span class="badge badge-danger">45 Reports</span>
+                        </li>
+                        <li>
+                            <span>Update Lesson Plans</span>
+                            <span class="badge badge-success">2 Classes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>📅 Today's Classes</h3>
+                    <ul class="schedule-list">
+                        <li>
+                            <span class="time">08:00 AM</span>
+                            <span>Class 10-A - Room 305</span>
+                        </li>
+                        <li>
+                            <span class="time">10:00 AM</span>
+                            <span>Class 11-B - Room 305</span>
+                        </li>
+                        <li>
+                            <span class="time">01:00 PM</span>
+                            <span>Class 10-B - Lab 2</span>
+                        </li>
+                        <li>
+                            <span class="time">03:00 PM</span>
+                            <span>Faculty Meeting - Staff Room</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🏆 Top Performers</h3>
+                    <ul class="info-list">
+                        <li>
+                            <span>Emma Watson - 10-A</span>
+                            <span class="grade">98%</span>
+                        </li>
+                        <li>
+                            <span>Michael Chen - 11-B</span>
+                            <span class="grade">96%</span>
+                        </li>
+                        <li>
+                            <span>Sophia Johnson - 10-B</span>
+                            <span class="grade">95%</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>⚠️ Students Needing Attention</h3>
+                    <ul class="info-list">
+                        <li>
+                            <span>Alex Brown - 10-A</span>
+                            <span class="badge badge-danger">62% Attendance</span>
+                        </li>
+                        <li>
+                            <span>Lisa Kim - 11-B</span>
+                            <span class="badge badge-warning">3 Missing Assignments</span>
+                        </li>
+                        <li>
+                            <span>David Lee - 10-B</span>
+                            <span class="badge badge-warning">Grade Drop</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+    <br><br>
 
-    <!-- Student Page -->
-    <div class="container hidden" id="studentPage">
-        <div class="page-header">
-            <button class="back-btn" onclick="showMainPortal()">← Back</button>
-            <h2>Student Dashboard</h2>
-        </div>
-        
-        <div class="profile-section">
-            <div class="profile-card">
-                <div class="photo-upload">
-                    <div class="photo-placeholder" id="studentPhoto">📷</div>
-                    <input type="file" id="studentPhotoInput" accept="image/*" style="display: none;">
-                    <button onclick="document.getElementById('studentPhotoInput').click()">Upload Photo</button>
-                </div>
-                <div class="profile-info">
-                    <h3 id="studentName">Student Name</h3>
-                    <p id="studentRoll">Roll Number: CS001</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="dashboard-options">
-            <div class="option-card personal-details" onclick="showPersonalDetails()">
-                <div class="option-icon">👤</div>
-                <div>
-                    <h3>Personal Details</h3>
-                    <p>View and manage personal information</p>
-                </div>
-            </div>
-            
-            <div class="option-card attendance" onclick="showAttendance()">
-                <div class="option-icon">📊</div>
-                <div>
-                    <h3>Attendance</h3>
-                    <p>Check attendance records and statistics</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Personal Details Section -->
-        <div class="details-section hidden" id="personalDetailsSection">
-            <h3>Personal Details</h3>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" value="John Doe" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Roll Number</label>
-                    <input type="text" value="CS001" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Date of Birth</label>
-                    <input type="date" value="2000-05-15" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Mobile Number</label>
-                    <input type="tel" value="+91 9876543210" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Semester</label>
-                    <input type="text" value="6th Semester" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Department</label>
-                    <input type="text" value="Computer Science" readonly>
-                </div>
-            </div>
-        </div>
-
-        <!-- Attendance Section -->
-        <div class="details-section hidden" id="attendanceSection">
-            <h3>Attendance Records</h3>
-            <div class="attendance-grid">
-                <div class="attendance-card">
-                    <h4>Data Structures</h4>
-                    <div class="attendance-info">
-                        <div class="percentage">85%</div>
-                        <div class="stats">
-                            <p>Total Classes: 40</p>
-                            <p>Attended: 34</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="attendance-card">
-                    <h4>Database Management</h4>
-                    <div class="attendance-info">
-                        <div class="percentage">92%</div>
-                        <div class="stats">
-                            <p>Total Classes: 35</p>
-                            <p>Attended: 32</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="attendance-card">
-                    <h4>Web Development</h4>
-                    <div class="attendance-info">
-                        <div class="percentage">78%</div>
-                        <div class="stats">
-                            <p>Total Classes: 42</p>
-                            <p>Attended: 33</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Staff Page -->
-    <div class="container hidden" id="staffPage">
-        <div class="page-header">
-            <button class="back-btn" onclick="showMainPortal()">← Back</button>
-            <h2>Staff Dashboard</h2>
-        </div>
-        
-        <div class="profile-section">
-            <div class="profile-card">
-                <div class="photo-upload">
-                    <div class="photo-placeholder" id="staffPhoto">📷</div>
-                    <input type="file" id="staffPhotoInput" accept="image/*" style="display: none;">
-                    <button onclick="document.getElementById('staffPhotoInput').click()">Upload Photo</button>
-                </div>
-                <div class="profile-info">
-                    <h3 id="staffName">Staff Name</h3>
-                    <p id="staffId">Staff ID: ST001</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="dashboard-options">
-            <div class="option-card staff-details" onclick="showStaffDetails()">
-                <div class="option-icon">👤</div>
-                <div>
-                    <h3>Staff Details</h3>
-                    <p>View and manage staff information</p>
-                </div>
-            </div>
-            
-            <div class="option-card staff-attendance" onclick="showStaffAttendance()">
-                <div class="option-icon">📊</div>
-                <div>
-                    <h3>Attendance Records</h3>
-                    <p>Check attendance and work statistics</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Staff Details Section -->
-        <div class="details-section hidden" id="staffDetailsSection">
-            <h3>Staff Details</h3>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" value="Dr. Jane Smith" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Staff ID</label>
-                    <input type="text" value="ST001" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Department</label>
-                    <input type="text" value="Computer Science" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Designation</label>
-                    <input type="text" value="Associate Professor" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Mobile Number</label>
-                    <input type="tel" value="+91 9876543210" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" value="jane.smith@college.edu" readonly>
-                </div>
-            </div>
-        </div>
-
-        <!-- Staff Attendance Section -->
-        <div class="details-section hidden" id="staffAttendanceSection">
-            <h3>Work Attendance</h3>
-            <div class="attendance-grid">
-                <div class="attendance-card">
-                    <h4>This Month</h4>
-                    <div class="attendance-info">
-                        <div class="percentage">96%</div>
-                        <div class="stats">
-                            <p>Working Days: 22</p>
-                            <p>Present: 21</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="attendance-card">
-                    <h4>Classes Conducted</h4>
-                    <div class="attendance-info">
-                        <div class="percentage">100%</div>
-                        <div class="stats">
-                            <p>Scheduled: 45</p>
-                            <p>Conducted: 45</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+ 
+    
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="JS/main.js"></script>
     <script src="JS/departements.js"></script>
+    <script src="JS/toggle.js"></script>
+    
+    <script src="JS/otherBack.js"></script>
 </body>
 </html>

@@ -1,481 +1,206 @@
-// Theme Toggle Functionality with enhanced animations
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
+// Get DOM elements
+const portalSelection = document.getElementById('portalSelection');
+const studentDashboard = document.getElementById('studentDashboard');
+const teacherDashboard = document.getElementById('teacherDashboard');
+const portalCards = document.querySelectorAll('.portal-card');
 
-// Initialize theme toggle with smooth transition
-themeToggle.addEventListener('click', () => {
-    // Add transition class for smoother theme change
-    body.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+// Add click event listeners to portal cards
+portalCards.forEach(card => {
+    const button = card.querySelector('.btn-primary');
+    button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const portalType = card.dataset.portal;
+        openPortal(portalType);
+    });
     
-    body.classList.toggle('dark-mode');
-    themeToggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    
-    // Add a ripple effect to the button
-    createRippleEffect(themeToggle);
-    
-    // Save theme preference to localStorage if available
-    if (typeof(Storage) !== "undefined") {
-        localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
-    }
-    
-    // Remove transition after animation completes
-    setTimeout(() => {
-        body.style.transition = '';
-    }, 500);
+    // Also make the entire card clickable
+    card.addEventListener('click', () => {
+        const portalType = card.dataset.portal;
+        openPortal(portalType);
+    });
 });
 
-// Create ripple effect for buttons
-function createRippleEffect(element) {
-    const ripple = document.createElement('span');
-    const rect = element.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
+// Function to open specific portal
+function openPortal(portalType) {
+    // Add exit animation
+    portalSelection.style.animation = 'fadeOut 0.3s ease';
     
-    ripple.style.width = ripple.style.height = size + 'px';
-    ripple.style.left = (rect.width / 2 - size / 2) + 'px';
-    ripple.style.top = (rect.height / 2 - size / 2) + 'px';
-    ripple.classList.add('ripple');
-    
-    element.appendChild(ripple);
-    
-    // Remove ripple after animation
     setTimeout(() => {
-        ripple.remove();
-    }, 600);
-}
-
-// Load saved theme preference
-document.addEventListener('DOMContentLoaded', () => {
-    if (typeof(Storage) !== "undefined") {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            themeToggle.textContent = '☀️';
+        portalSelection.classList.add('hidden');
+        
+        if (portalType === 'student') {
+            studentDashboard.classList.remove('hidden');
+            animateCards(studentDashboard);
+        } else if (portalType === 'teacher') {
+            teacherDashboard.classList.remove('hidden');
+            animateCards(teacherDashboard);
         }
-    }
-});
-
-// Enhanced navigation with smooth page transitions
-function showMainPortal() {
-    animatePageTransition(() => {
-        hideAllPages();
-        document.getElementById('mainPortal').classList.remove('hidden');
-        hideAllSections();
-    });
+    }, 300);
 }
 
-function showStudentPage() {
-    animatePageTransition(() => {
-        hideAllPages();
-        document.getElementById('studentPage').classList.remove('hidden');
-        hideAllSections();
-    });
-}
-
-function showStaffPage() {
-    animatePageTransition(() => {
-        hideAllPages();
-        document.getElementById('staffPage').classList.remove('hidden');
-        hideAllSections();
-    });
-}
-
-// Add smooth page transition animation
-function animatePageTransition(callback) {
-    const currentPage = document.querySelector('.container:not(.hidden)');
+// Function to go back to portal selection
+function goBack() {
+    const activeDashboard = document.querySelector('.dashboard:not(.hidden)');
     
-    if (currentPage) {
-        // Fade out current page
-        currentPage.style.transition = 'all 0.3s ease';
-        currentPage.style.opacity = '0';
-        currentPage.style.transform = 'scale(0.95)';
+    if (activeDashboard) {
+        activeDashboard.style.animation = 'fadeOut 0.3s ease';
         
         setTimeout(() => {
-            callback();
-            const newPage = document.querySelector('.container:not(.hidden)');
-            
-            if (newPage) {
-                // Fade in new page
-                newPage.style.opacity = '0';
-                newPage.style.transform = 'scale(1.05)';
-                
-                // Trigger reflow
-                newPage.offsetHeight;
-                
-                newPage.style.transition = 'all 0.3s ease';
-                newPage.style.opacity = '1';
-                newPage.style.transform = 'scale(1)';
-                
-                // Add entrance animation to cards
-                animateCardsEntrance(newPage);
-            }
+            activeDashboard.classList.add('hidden');
+            portalSelection.classList.remove('hidden');
+            portalSelection.style.animation = 'fadeIn 0.5s ease';
         }, 300);
-    } else {
-        callback();
     }
 }
 
-// Animate cards entrance
-function animateCardsEntrance(container) {
-    const cards = container.querySelectorAll('.portal-card, .option-card, .attendance-card');
-    
+// Animate dashboard cards on load
+function animateCards(dashboard) {
+    const cards = dashboard.querySelectorAll('.card');
     cards.forEach((card, index) => {
         card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
+        card.style.transform = 'translateY(30px)';
         
         setTimeout(() => {
-            card.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+            card.style.transition = 'all 0.5s ease';
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
         }, index * 100);
     });
 }
 
-function hideAllPages() {
-    const pages = ['mainPortal', 'studentPage', 'staffPage'];
-    pages.forEach(page => {
-        const element = document.getElementById(page);
-        if (element) {
-            element.classList.add('hidden');
-        }
+// Add hover effect to portal cards
+portalCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        const icon = card.querySelector('.icon');
+        icon.style.transform = 'scale(1.2) rotate(5deg)';
+        icon.style.transition = 'all 0.3s ease';
     });
-}
-
-function hideAllSections() {
-    const sections = [
-        'personalDetailsSection', 
-        'attendanceSection', 
-        'staffDetailsSection', 
-        'staffAttendanceSection'
-    ];
-    sections.forEach(section => {
-        const element = document.getElementById(section);
-        if (element) {
-            element.classList.add('hidden');
-        }
+    
+    card.addEventListener('mouseleave', () => {
+        const icon = card.querySelector('.icon');
+        icon.style.transform = 'scale(1) rotate(0deg)';
     });
-}
+});
 
-// Student Functions
-function showPersonalDetails() {
-    hideAllSections();
-    const section = document.getElementById('personalDetailsSection');
-    if (section) {
-        section.classList.remove('hidden');
-        // Smooth scroll to section
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// Simulate real-time attendance updates
+function updateAttendance() {
+    const progressFill = document.querySelector('.progress-fill');
+    if (progressFill && !studentDashboard.classList.contains('hidden')) {
+        const currentWidth = parseInt(progressFill.style.width);
+        if (currentWidth < 100) {
+            progressFill.style.width = (currentWidth + 1) + '%';
+            const statLarge = progressFill.closest('.card').querySelector('.stat-large');
+            statLarge.textContent = (currentWidth + 1) + '%';
+        }
     }
 }
 
-function showAttendance() {
-    hideAllSections();
-    const section = document.getElementById('attendanceSection');
-    if (section) {
-        section.classList.remove('hidden');
-        // Smooth scroll to section
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-}
-
-// Staff Functions
-function showStaffDetails() {
-    hideAllSections();
-    const section = document.getElementById('staffDetailsSection');
-    if (section) {
-        section.classList.remove('hidden');
-        // Smooth scroll to section
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-}
-
-function showStaffAttendance() {
-    hideAllSections();
-    const section = document.getElementById('staffAttendanceSection');
-    if (section) {
-        section.classList.remove('hidden');
-        // Smooth scroll to section
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-}
-
-// Photo Upload Handlers
+// Add click effects to cards
 document.addEventListener('DOMContentLoaded', () => {
-    const studentPhotoInput = document.getElementById('studentPhotoInput');
-    const staffPhotoInput = document.getElementById('staffPhotoInput');
-
-    if (studentPhotoInput) {
-        studentPhotoInput.addEventListener('change', function(e) {
-            handlePhotoUpload(e, 'studentPhoto');
+    const allCards = document.querySelectorAll('.card');
+    
+    allCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Create ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            ripple.style.position = 'absolute';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.style.width = '0';
+            ripple.style.height = '0';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(102, 126, 234, 0.3)';
+            ripple.style.transform = 'translate(-50%, -50%)';
+            ripple.style.animation = 'ripple 0.6s ease-out';
+            
+            this.style.position = 'relative';
+            this.style.overflow = 'hidden';
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
         });
+    });
+});
+
+// Add ripple animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes ripple {
+        to {
+            width: 500px;
+            height: 500px;
+            opacity: 0;
+        }
     }
+    
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+            transform: scale(1);
+        }
+        to {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+    }
+`;
+document.head.appendChild(style);
 
-    if (staffPhotoInput) {
-        staffPhotoInput.addEventListener('change', function(e) {
-            handlePhotoUpload(e, 'staffPhoto');
-        });
+// Interactive badge color changes
+setInterval(() => {
+    const badges = document.querySelectorAll('.badge-warning');
+    badges.forEach(badge => {
+        if (Math.random() > 0.7) {
+            badge.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                badge.style.transform = 'scale(1)';
+            }, 200);
+        }
+    });
+}, 3000);
+
+// Add smooth scroll behavior
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        goBack();
     }
 });
 
-function handlePhotoUpload(event, photoElementId) {
-    const file = event.target.files[0];
-    if (file) {
-        // Validate file type
-        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-        if (!allowedTypes.includes(file.type)) {
-            alert('Please select a valid image file (JPEG, PNG, GIF, or WebP)');
-            return;
-        }
-
-        // Validate file size (max 5MB)
-        const maxSize = 5 * 1024 * 1024; // 5MB in bytes
-        if (file.size > maxSize) {
-            alert('File size must be less than 5MB');
-            return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const photoElement = document.getElementById(photoElementId);
-            if (photoElement) {
-                photoElement.style.backgroundImage = `url(${e.target.result})`;
-                photoElement.style.backgroundSize = 'cover';
-                photoElement.style.backgroundPosition = 'center';
-                photoElement.textContent = '';
-                
-                // Add a success animation
-                photoElement.style.transform = 'scale(1.1)';
-                setTimeout(() => {
-                    photoElement.style.transform = 'scale(1)';
-                }, 200);
-            }
-        };
-        reader.readAsDataURL(file);
-    }
-}
-
-// Update attendance percentage colors based on value
-function updateAttendanceColors() {
-    const percentageElements = document.querySelectorAll('.percentage');
+// Add dynamic time update
+function updateTime() {
+    const now = new Date();
+    const timeElements = document.querySelectorAll('.time');
     
-    percentageElements.forEach(element => {
-        const percentage = parseInt(element.textContent);
-        
-        if (percentage >= 90) {
-            element.style.color = 'var(--success-color)';
-        } else if (percentage >= 75) {
-            element.style.color = 'var(--warning-color)';
-        } else {
-            element.style.color = 'var(--error-color)';
-        }
+    timeElements.forEach((elem, index) => {
+        const hour = (now.getHours() + index) % 24;
+        const ampm = hour >= 12 ? 'PM' : 'AM';
+        const displayHour = hour % 12 || 12;
+        elem.textContent = `${displayHour.toString().padStart(2, '0')}:00 ${ampm}`;
     });
 }
 
-// Add hover effects to form inputs
-document.addEventListener('DOMContentLoaded', () => {
-    const inputs = document.querySelectorAll('input');
-    
-    inputs.forEach(input => {
-        input.addEventListener('mouseenter', () => {
-            if (!input.matches(':focus')) {
-                input.style.borderColor = 'var(--primary-color)';
-            }
-        });
-        
-        input.addEventListener('mouseleave', () => {
-            if (!input.matches(':focus')) {
-                input.style.borderColor = 'var(--border-color)';
-            }
-        });
-    });
-    
-    // Initialize attendance colors
-    updateAttendanceColors();
-});
+// Initialize
+updateTime();
 
-// Add smooth transitions for section changes
-function showSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.classList.remove('hidden');
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        
-        // Trigger reflow
-        section.offsetHeight;
-        
-        section.style.transition = 'all 0.3s ease';
-        section.style.opacity = '1';
-        section.style.transform = 'translateY(0)';
-    }
-}
-
-// Enhanced navigation with animations
-function navigateWithAnimation(showFunction) {
-    const currentPage = document.querySelector('.container:not(.hidden)');
-    if (currentPage) {
-        currentPage.style.opacity = '0.5';
-        currentPage.style.transform = 'scale(0.98)';
-        
-        setTimeout(() => {
-            showFunction();
-            const newPage = document.querySelector('.container:not(.hidden)');
-            if (newPage) {
-                newPage.style.opacity = '0';
-                newPage.style.transform = 'scale(1.02)';
-                
-                // Trigger reflow
-                newPage.offsetHeight;
-                
-                newPage.style.transition = 'all 0.3s ease';
-                newPage.style.opacity = '1';
-                newPage.style.transform = 'scale(1)';
-            }
-        }, 150);
-    } else {
-        showFunction();
-    }
-}
-
-// Add keyboard navigation support
-document.addEventListener('keydown', (event) => {
-    // ESC key to go back
-    if (event.key === 'Escape') {
-        const currentPage = document.querySelector('.container:not(.hidden)').id;
-        if (currentPage !== 'mainPortal') {
-            showMainPortal();
-        }
-    }
-    
-    // Number keys for quick navigation
-    if (event.key === '1' && document.getElementById('mainPortal').classList.contains('hidden') === false) {
-        showStudentPage();
-    } else if (event.key === '2' && document.getElementById('mainPortal').classList.contains('hidden') === false) {
-        showStaffPage();
-    }
-});
-
-// Add loading states for better UX
-function showLoading(elementId) {
-    const element = document.getElementById(elementId);
-    if (element) {
-        element.style.opacity = '0.6';
-        element.style.pointerEvents = 'none';
-    }
-}
-
-function hideLoading(elementId) {
-    const element = document.getElementById(elementId);
-    if (element) {
-        element.style.opacity = '1';
-        element.style.pointerEvents = 'auto';
-    }
-}
-
-// Initialize tooltips for better accessibility
-function initializeTooltips() {
-    const cards = document.querySelectorAll('.portal-card, .option-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.position = 'relative';
-        });
-    });
-}
-
-// Initialize all interactive features when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Load saved theme preference
-    if (typeof(Storage) !== "undefined") {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            themeToggle.textContent = '☀️';
-        }
-    }
-    
-    initializeTooltips();
-    updateAttendanceColors();
-    addCardHoverEffects();
-    initializeParallaxEffect();
-    
-    // Add CSS for ripple effect
-    const rippleCSS = `
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.6);
-            transform: scale(0);
-            animation: rippleAnimation 0.6s linear;
-            pointer-events: none;
-        }
-        
-        @keyframes rippleAnimation {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-    `;
-    
-    const style = document.createElement('style');
-    style.textContent = rippleCSS;
-    document.head.appendChild(style);
-});
-
-// Add enhanced card hover effects
-function addCardHoverEffects() {
-    const cards = document.querySelectorAll('.portal-card, .option-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', (e) => {
-            // Add magnetic effect
-            card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-        });
-        
-        card.addEventListener('mousemove', (e) => {
-            if (window.innerWidth > 768) { // Only on desktop
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
-            }
-        });
-        
-        card.addEventListener('mouseleave', (e) => {
-            card.style.transform = '';
-        });
-    });
-}
-
-// Add parallax effect to background
-function initializeParallaxEffect() {
-    let mouseX = 0;
-    let mouseY = 0;
-    let targetX = 0;
-    let targetY = 0;
-    
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX / window.innerWidth;
-        mouseY = e.clientY / window.innerHeight;
-    });
-    
-    function animateParallax() {
-        targetX += (mouseX - targetX) * 0.02;
-        targetY += (mouseY - targetY) * 0.02;
-        
-        const bgElement = document.body;
-        if (bgElement) {
-            bgElement.style.backgroundPosition = `${targetX * 20}px ${targetY * 20}px`;
-        }
-        
-        requestAnimationFrame(animateParallax);
-    }
-    
-    animateParallax();
-}
+// Log portal access (for demo purposes)
+console.log('Departments Portal initialized successfully!');
