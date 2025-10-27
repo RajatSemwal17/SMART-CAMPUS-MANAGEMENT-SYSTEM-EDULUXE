@@ -443,3 +443,29 @@ input:checked+.slider:before {
         justify-content: flex-end;
     }
 }
+
+
+.evt-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.events-image{
+    align-items: center;
+    width: 350px;
+}
+@media (min-width:1151px){
+    .events-image{
+        width: 350px;
+    }
+}
+@media (max-width:1150px){
+    .events-image{
+        width: 300px;
+    }
+}
+@media (max-width:946px){
+    .events-image{
+        width: 270px;
+    }
+}

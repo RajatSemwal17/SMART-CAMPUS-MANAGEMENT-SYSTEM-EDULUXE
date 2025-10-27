@@ -241,8 +241,8 @@ main{
   transform: translate(-50%, -50%);
   font-size: 2rem;
   color: rgb(14, 17, 116);
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-weight: 500;
+  letter-spacing: 1px;
   text-align: center;
   z-index: 2;
   font-family: "Electrolize", sans-serif;
@@ -444,4 +444,10 @@ ul{
   border-radius: 10px;
   font-weight: lighter;
   box-shadow: 1px 1px 10px rgb(186, 185, 185);
+}
+
+.chatbot{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
