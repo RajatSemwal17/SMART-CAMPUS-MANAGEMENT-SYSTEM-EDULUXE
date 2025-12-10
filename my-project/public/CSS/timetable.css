@@ -1,0 +1,338 @@
+/* Style the entire table */
+.table-cover{
+  background-color: red;
+}
+
+table {
+  width: 100%; /* Or try 600px to test */
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  table-layout: fixed;
+}
+
+td, th {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 10px;
+}
+
+/* Header row */
+thead {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Header cells */
+th {
+  padding: 2em;
+  border: 1px solid #171313;
+  font-weight: bold;
+}
+
+/* Body rows */
+tbody tr {
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+th{
+  transition: background-color 0.3s;
+}
+/* Hover effect */
+th:hover {
+  background-color: rgb(0, 0, 0)
+}
+
+/* Data cells */
+td {
+  padding: 1.5em;
+  border: 2px solid #0000003f;
+  transition: background-color 0.3s;
+}
+td:hover{
+  transform:scale(1.1);
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.find-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  padding: 1.5em 2em;
+  border-radius: 15px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+  margin-left: 2em;
+  margin-right: 2em;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+label[for="groupSelect"] {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #000000;
+  font-size: 1.1rem;
+}
+.selectGroup {
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, rgb(97, 95, 95), rgb(169, 168, 223));
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.selectGroup:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+}
+
+.selectGroup:focus {
+  outline: none;
+  border-color: #00ffcc;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.generate {
+  padding: 12px 25px;
+  border: none;
+  background: linear-gradient(90deg, #ff0000, #ff7a00);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.generate:hover {
+  background: linear-gradient(90deg, #ff4d4d, #ff9900);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 100, 0, 0.4);
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.toggle{
+  position: relative;
+  margin:1em 1em;
+  height: 50px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.696);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out 0s;
+  box-shadow: 0px 7px 7px rgb(111, 110, 110);
+  cursor: pointer;
+}
+.sun,.moon{
+  position: absolute;
+  height: 2em;
+  transition: all 0.2s ease-in-out 0s;
+}
+.sun{
+  color: #1c1c1c77;
+}
+.moon{
+  color: white;
+}
+.toggle:hover{
+  border: 1px solid rgb(0, 255, 0);
+  box-shadow: 0px 2px 7px rgb(68, 255, 0);
+}
+.toggle:hover .sun{
+  transition: all 0.2s ease-in-out 0s;
+  color: rgb(0, 255, 21);
+}
+.toggle:hover .moon{
+  transition: all 0.2s ease-in-out 0s;
+  color: rgb(0, 255, 21);
+}
+#about-tt{
+  margin-top: 1em ;
+  text-align: center;
+  font-size: 4.5em;
+  background: linear-gradient(to right, #00c3b5, #8fd645, #ffd200);
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1em;
+}
+
+.learning{
+  margin-top: 5em;
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.learning-Resource{
+  text-align: center;
+  font-size: 3em;
+  background-color: rgb(240, 237, 237);
+  padding: 20px;
+}
+.my-card {
+  margin-bottom: 2em;
+  background-color: #ffffff;
+  width: 31em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15em;
+  gap: 15px;
+  border-radius: 10px;
+  position: relative;
+  transition: all 0.2s ease-in-out 0s;
+  box-shadow: 1px 1px 10px rgb(222, 224, 225);
+  cursor: pointer;
+}
+my-card:hover{
+  box-shadow: 0 5px 15px rgba(57, 56, 56, 0.3);
+  transform:scale(1.05);
+}
+
+.my-card::before{
+  position: absolute;
+  right: 0%;
+  top: 1.5%;
+  content: "";
+  background:linear-gradient(to bottom,rgb(255, 0, 212),rgb(255, 0, 81));
+  height:96%;
+  width: 4px;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.3s ease-in-out 0s;
+  border-radius: 10px;
+}
+.my-card:hover::before{
+  transform: scaleY(1);
+}
+.my-card a i{
+  position: absolute;
+  font-size: 1.3em;
+  transition: left 0.2s linear;
+  animation: return 0.2s linear forwards;
+  margin-left: 10px;
+}
+.my-card:hover a i{
+  animation: move 0.2s linear forwards;
+  font-size: 1.2em;
+}
+
+@keyframes move{
+  from{
+    left: 4em;  
+  }
+  to{
+    left: 10em;
+  }
+}
+@keyframes return{
+  from{
+    left: 10em;  
+  }
+  to{
+    left: 4em;
+  }
+}
+
+.my-card img {
+  width: 150px;
+  height: 150px;
+}
+.star{
+  color: rgb(128, 128, 125);
+  font-size: 1.3em;
+  position: absolute;
+  top: 10%;
+  right:10%;
+  transition: all 0.2s ease-in-out;
+}
+.card-content {
+  flex: 1;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1.7em;
+  color: rgb(221, 0, 255);
+}
+.my-card:hover h3{
+  color: aqua;
+}
+.card-content p {
+  margin: 5px 0 0;
+  font-size: 1em;
+  color: #808080;
+}
+
+.my-card a {
+  color: #65fb01;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  position: absolute;
+  bottom: 1.3em;
+}
+
+.marked-titles{
+  margin-top: 3em;
+  text-align: center;
+  font-size: 1.6em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.marked-titles span{
+  margin-bottom: 1em;
+  width: 100%;
+  margin-left: 5em;
+  margin-right: 5em;
+  background-color: #f8f8f8b5;
+  padding: 10px 30px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.marked-titles span:hover{
+  background-color: #e6e8ff;
+}
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.loader img{
+  height: 200px;
+}
+
+.accordion-item{
+  max-width: 80%;
+  margin: auto;
+  background-color: red;
+}
+.accordion-body{
+  background-color: rgb(198, 210, 242);
+}
+
+
+/* Style the dropdown options */
+.selectGroup option {
+  background-color: rgb(5, 5, 104);font-size: 1.2em;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}

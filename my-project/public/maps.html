@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chitkara Campus Navigator Pro</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 20px;
+            height: calc(100vh - 30px);
+        }
+        
+        .sidebar {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            overflow-y: auto;
+            backdrop-filter: blur(10px);
+        }
+        
+        .map-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 25px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95em;
+        }
+        
+        .controls {
+            padding: 25px;
+        }
+        
+        .section-title {
+            font-size: 0.85em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .destination-group {
+            margin-bottom: 25px;
+        }
+        
+        #block-select {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23667eea' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+        }
+        
+        #block-select:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+        }
+        
+        .transport-modes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        
+        .mode-btn {
+            padding: 16px;
+            border: 2px solid #e1e8ed;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .mode-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        
+        .mode-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .mode-icon {
+            font-size: 1.8em;
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #2c3e50;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.8em;
+            color: #5a6c7d;
+            margin-top: 4px;
+        }
+        
+        #map { 
+            flex: 1;
+            width: 100%;
+        }
+        
+        #directions-panel { 
+            padding: 25px;
+            max-height: 350px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border-top: 2px solid #e1e8ed;
+        }
+        
+        #directions-panel h3 { 
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            font-size: 1.3em;
+        }
+        
+        #directions-panel ol {
+            margin: 15px 0 0 0;
+            padding: 0;
+            list-style: none;
+            counter-reset: step-counter;
+        }
+        
+        #directions-panel li {
+            margin: 10px 0;
+            padding: 14px 14px 14px 50px;
+            background: white;
+            border-left: 4px solid #667eea;
+            border-radius: 10px;
+            line-height: 1.6;
+            color: #495057;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            position: relative;
+            counter-increment: step-counter;
+        }
+        
+        #directions-panel li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85em;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.1em;
+            padding: 40px;
+        }
+        
+        .error {
+            color: #dc3545;
+            background: #ffe6e6;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .info-message {
+            text-align: center;
+            color: #6c757d;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        
+        .route-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .route-summary h4 {
+            margin: 0 0 12px 0;
+            font-size: 1.1em;
+        }
+        
+        .route-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .route-summary-item {
+            text-align: center;
+        }
+        
+        .route-summary-value {
+            font-size: 1.4em;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .route-summary-label {
+            font-size: 0.85em;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+        
+        /* Custom scrollbar */
+        .sidebar::-webkit-scrollbar,
+        #directions-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .sidebar::-webkit-scrollbar-track,
+        #directions-panel::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb,
+        #directions-panel::-webkit-scrollbar-thumb {
+            background: #ea7e66;
+            border-radius: 10px;
+        }
+        
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr;
+            }
+            
+            .sidebar {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <header>
+                <h1>🗺️ Chitkara Campus Navigator</h1>
+                <div class="subtitle">Multi-Modal Route Planning</div>
+            </header>
+
+            <div class="controls">
+                <div class="destination-group">
+                    <div class="section-title">📍 Destination Block</div>
+                    <!-- <select id="block-select">
+                        <option value="">Choose your destination...</option>
+                        <optgroup label="🏛️ Academic Blocks (Named)">
+                            <option value="babbage">💻 Babbage Block (CURIN Research)</option>
+                            <option value="bloom">🎓 Bloom Block</option>
+                            <option value="demorgan">💾 De Morgan Block (Computer Applications)</option>
+                            <option value="edison">💡 Edison Block</option>
+                            <option value="fleming">🔬 Fleming Block</option>
+                            <option value="galileo">🔭 Galileo Block</option>
+                            <option value="lecorbusier">🏗️ Le Corbusier Block</option>
+                            <option value="newton">🍎 Newton Block</option>
+                            <option value="picasso">🎨 Picasso Block (Shiksha)</option>
+                            <option value="tesla">⚡ Tesla Block (CURIN)</option>
+                            <option value="turing">🖥️ Turing Block</option>
+                        </optgroup>
+                        <optgroup label="🏢 Innovation & Research">
+                            <option value="explorehub">🚀 ExploreHub</option>
+                            <option value="exploretorium">🔍 Exploretorium</option>
+                        </optgroup>
+                        <optgroup label="⚽ Sports & Recreation">
+                            <option value="sportorium">🏃 Sportorium (Sports Complex)</option>
+                        </optgroup>
+                        <optgroup label="🏛️ Main Facilities">
+                            <option value="library">📚 Central Library</option>
+                            <option value="auditorium">🎭 Main Auditorium</option>
+                            <option value="admin">🏢 Administration Block</option>
+                            <option value="cafeteria">🍽️ Food Court</option>
+                        </optgroup>
+                    </select> -->
+                
+                    <select id="block-select">
+                        <option value="">Choose your destination...</option>
+                        <option value="lecorbusier">Le Corbusier</option>
+                        <option value="pythagorus">Pythagorus</option>
+                        <option value="edison">Edison</option>
+                        <option value="footballground">Football Ground </option>
+                        <option value="parking">Parking</option>
+                    </select>
+
+                </div>
+                
+                <div class="destination-group">
+                    <div class="section-title">🚗 Transport Mode</div>
+                    <div class="transport-modes">
+                        <button class="mode-btn active" data-mode="foot-walking">
+                            <span class="mode-icon">🚶</span>
+                            Walking
+                        </button>
+                        <button class="mode-btn" data-mode="cycling-regular">
+                            <span class="mode-icon">🚴</span>
+                            Cycling
+                        </button>
+                        <button class="mode-btn" data-mode="driving-car">
+                            <span class="mode-icon">🚗</span>
+                            Driving
+                        </button>
+                        <button class="mode-btn" data-mode="wheelchair">
+                            <span class="mode-icon">♿</span>
+                            Accessible
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="destination-group">
+                    <div class="section-title">📊 Quick Stats</div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-value" id="stat-distance">--</span>
+                            <span class="stat-label">Distance</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value" id="stat-time">--</span>
+                            <span class="stat-label">Est. Time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <div id="map"></div>
+            
+            <div id="directions-panel">
+                <div class="info-message">
+                    <strong>👋 Welcome to Chitkara Campus Navigator!</strong><br><br>
+                    Select a destination block and transport mode to get started.<br>
+                    We'll calculate the optimal route with real-time traffic data.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+      const ORS_API_KEY = "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjY3MzUzMTYxZjUzNTQ0M2Q4MmIzN2FhZjc4YWNkODRjIiwiaCI6Im11cm11cjY0In0=";   
+      
+      let map;
+      let currentRouteLayer = null; 
+      let currentMarkerLayer = null;
+      let selectedMode = 'foot-walking';
+      
+      // Chitkara University Punjab Campus Blocks
+      // Main campus center: 30.516459°N, 76.659210°E
+     const DESTINATIONS = {
+    'lecorbusier': [76.6605, 30.5170],      // Le Corbusier
+    'pythagorus': [76.6590, 30.5150],      // Pythagorus
+    'edison': [76.6598, 30.5163],          // Edison
+    'footballground': [76.6580, 30.5166],  // Football Ground
+    'parking': [76.6615, 30.5155]          // Parking
+};
+
+      const BLOCK_INFO = {
+    'lecorbusier': { name: 'Le Corbusier', emoji: '🏢', desc: '' },
+    'pythagorus': { name: 'Pythagorus', emoji: '📐', desc: '' },
+    'edison': { name: 'Edison', emoji: '🍽️', desc: '' },
+    'footballground': { name: 'Football Ground', emoji: '🏟️', desc: '' },
+    'parking': { name: 'Parking', emoji: '🅿️', desc: '' }
+};
+
+      const MODE_COLORS = {
+          'foot-walking': '#667eea',
+          'cycling-regular': '#48bb78',
+          'driving-car': '#ed8936',
+          'wheelchair': '#4299e1'
+      };
+
+      const TRAFFIC_INDICATOR = {
+          'low': { color: '#48bb78', label: 'Light Traffic', emoji: '🟢' },
+          'moderate': { color: '#ed8936', label: 'Moderate Traffic', emoji: '🟡' },
+          'heavy': { color: '#e53e3e', label: 'Heavy Traffic', emoji: '🔴' }
+      };
+
+      document.addEventListener('DOMContentLoaded', function() {
+          // Initialize map centered on Chitkara University Punjab
+          map = L.map('map').setView([30.5165, 76.6600], 16); 
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '© OpenStreetMap contributors'
+          }).addTo(map);
+          
+          currentMarkerLayer = L.layerGroup();
+          currentMarkerLayer.addTo(map);
+
+          // Add markers for all blocks
+          Object.keys(DESTINATIONS).forEach(blockKey => {
+              const coords = DESTINATIONS[blockKey];
+              const info = BLOCK_INFO[blockKey];
+              const latLng = [coords[1], coords[0]];
+              
+              L.marker(latLng).addTo(map)
+                  .bindPopup(`<b>${info.emoji} ${info.name}</b><br><small>${info.desc}</small>`);
+          });
+
+          // Mode button listeners
+          document.querySelectorAll('.mode-btn').forEach(btn => {
+              btn.addEventListener('click', function() {
+                  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+                  this.classList.add('active');
+                  selectedMode = this.dataset.mode;
+                  
+                  const destination = document.getElementById('block-select').value;
+                  if (destination) {
+                      findRoute(destination);
+                  }
+              });
+          });
+
+          // Destination change listener
+          document.getElementById('block-select').addEventListener('change', function() {
+              if (this.value) {
+                  findRoute(this.value);
+              }
+          });
+      });
+
+      function findRoute(destinationKey) {
+    if (!destinationKey) return;
+
+    const destination = DESTINATIONS[destinationKey];
+    const blockInfo = BLOCK_INFO[destinationKey];
+    const instructionsPanel = document.getElementById('directions-panel'); 
+
+    // Fixed current location to Edison block coordinates (swap lat/lng for origin)
+
+    // Fixed current location to Edison block shifted coordinates
+const originLatLng = [30.5163, 76.6605]; // latitude, longitude for Leaflet marker
+const origin = [76.6605, 30.5163];       // longitude, latitude for ORS API
+
+
+    if (currentRouteLayer) {
+        map.removeLayer(currentRouteLayer);
+    }
+    currentMarkerLayer.clearLayers();
+
+    // Origin Marker
+    const originIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: "<div style='background: #667eea; width: 20px; height: 20px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);'></div>",
+        iconSize: [20, 20],
+        iconAnchor: [10, 10]
+    });
+
+    L.marker(originLatLng, {icon: originIcon}).addTo(currentMarkerLayer)
+        .bindPopup('📍 You Are Here'); 
+
+    // Destination Marker
+    const destLatLng = [destination[1], destination[0]];
+    const destIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: "<div style='background: #e53e3e; width: 24px; height: 24px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);'></div>",
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+    });
+
+    L.marker(destLatLng, {icon: destIcon}).addTo(currentMarkerLayer)
+        .bindPopup(`<b>🎯 ${blockInfo.name}</b>`);
+
+    instructionsPanel.innerHTML = '<div class="loading">🔄 Calculating route with real-time traffic data...</div>';
+
+    let orsUrl = `https://api.openrouteservice.org/v2/directions/${selectedMode}?api_key=${ORS_API_KEY}&start=${origin[0]},${origin[1]}&end=${destination[0]},${destination[1]}`;
+
+    if (selectedMode === 'driving-car') {
+        orsUrl += '&options={"avoid_features":[]}&preference=recommended';
+    }
+
+    fetch(orsUrl)
+    .then(response => response.json())
+    .then(function(data) {
+        if (data.error) {
+            throw new Error(data.error.message || 'API Error');
+        }
+        
+        const route = data.features[0];
+        const coordinates = route.geometry.coordinates;
+        const latlngs = coordinates.map(coord => [coord[1], coord[0]]);
+        
+        currentRouteLayer = L.polyline(latlngs, {
+            color: MODE_COLORS[selectedMode], 
+            weight: 6,
+            opacity: 0.8,
+            lineCap: 'round',
+            lineJoin: 'round'
+        });
+        currentRouteLayer.addTo(map);
+
+        map.fitBounds(currentRouteLayer.getBounds(), { padding: [50, 50] });
+        
+        const steps = route.properties.segments[0].steps;
+        const summary = route.properties.summary;
+        
+        const durationSeconds = summary.duration;
+        const durationMinutes = Math.round(durationSeconds / 60);
+        const hours = Math.floor(durationMinutes / 60);
+        const minutes = durationMinutes % 60;
+        const timeDisplay = hours > 0 ? `${hours}h ${minutes}min` : `${minutes}min`;
+        const distanceDisplay = (summary.distance / 1000).toFixed(2);
+
+        const distanceKm = summary.distance / 1000;
+        let baselineMinutes;
+        if (selectedMode === 'foot-walking') baselineMinutes = (distanceKm / 5) * 60;
+        else if (selectedMode === 'cycling-regular') baselineMinutes = (distanceKm / 15) * 60;
+        else if (selectedMode === 'driving-car') baselineMinutes = (distanceKm / 40) * 60;
+        else baselineMinutes = (distanceKm / 4) * 60;
+
+        let trafficInfo = null;
+        if (selectedMode === 'driving-car') {
+            const delay = durationMinutes - baselineMinutes;
+            const delayPercent = (delay / baselineMinutes) * 100;
+            
+            if (delayPercent < 15) {
+                trafficInfo = { ...TRAFFIC_INDICATOR['low'], delay: Math.round(delay) };
+            } else if (delayPercent < 40) {
+                trafficInfo = { ...TRAFFIC_INDICATOR['moderate'], delay: Math.round(delay) };
+            } else {
+                trafficInfo = { ...TRAFFIC_INDICATOR['heavy'], delay: Math.round(delay) };
+            }
+        }
+
+        document.getElementById('stat-distance').textContent = `${distanceDisplay} km`;
+        document.getElementById('stat-time').textContent = timeDisplay;
+
+        const now = new Date();
+        const arrivalTime = new Date(now.getTime() + durationSeconds * 1000);
+        const arrivalDisplay = arrivalTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+        let trafficHTML = '';
+        if (trafficInfo) {
+            trafficHTML = `
+                <div class="route-summary-item">
+                    <span class="route-summary-value" style="font-size: 1.2em;">${trafficInfo.emoji}</span>
+                    <span class="route-summary-label">${trafficInfo.label}</span>
+                </div>
+            `;
+        }
+
+        instructionsPanel.innerHTML = `
+            <div class="route-summary">
+                <h4>🎯 Route to ${blockInfo.emoji} ${blockInfo.name}</h4>
+                ${trafficInfo && trafficInfo.delay > 2 ? `<p style="margin: 10px 0 0 0; font-size: 0.9em; opacity: 0.95;">⚠️ +${trafficInfo.delay} min delay due to traffic</p>` : ''}
+                <div class="route-summary-grid" style="grid-template-columns: ${trafficInfo ? 'repeat(4, 1fr)' : 'repeat(3, 1fr)'};">
+                    <div class="route-summary-item">
+                        <span class="route-summary-value">${distanceDisplay} km</span>
+                        <span class="route-summary-label">Distance</span>
+                    </div>
+                    <div class="route-summary-item">
+                        <span class="route-summary-value">${timeDisplay}</span>
+                        <span class="route-summary-label">Duration</span>
+                    </div>
+                    <div class="route-summary-item">
+                        <span class="route-summary-value">${arrivalDisplay}</span>
+                        <span class="route-summary-label">Arrival</span>
+                    </div>
+                    ${trafficHTML}
+                </div>
+            </div>
+            <h3>📋 Turn-by-Turn Directions</h3>
+            <ol></ol>
+        `;
+
+        const ol = instructionsPanel.querySelector('ol');
+        steps.forEach(step => {
+            if (step.distance > 0 || step.instruction.toLowerCase().includes('destination')) {
+                const distance = (step.distance < 1000) ? `${Math.round(step.distance)} m` : `${(step.distance / 1000).toFixed(2)} km`;
+                ol.innerHTML += `<li>${step.instruction} <strong>(${distance})</strong></li>`;
+            }
+        });
+    })
+    .catch(function(err) {
+        console.error("ORS Route Error:", err);
+        instructionsPanel.innerHTML = `<div class="error"><h4>⚠️ Unable to Calculate Route</h4><p>${err.message || 'Please check your connection and try again.'}</p></div>`;
+    });
+}
+
+    
+    </script>
+</body>
+</html>

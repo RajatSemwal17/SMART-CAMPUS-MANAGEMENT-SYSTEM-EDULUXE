@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.freepik.com/512/3624/3624948.png"
+    />
+
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/timetable.css" />
+    <link rel="stylesheet" href="CSS/toggle.css" />
+    <link rel="stylesheet" href="CSS/about.css" />
+    <link rel="stylesheet" href="MediaQuerries/media1.css">
+  </head>
+  <body>
+    <div id="tsparticles"></div>
+
+    <header>
+      <nav>
+        <div class="logo" onclick="window.location.href='index.html' ">
+          <img src="images/eduluxe.png" alt="" />
+        </div>
+
+        <div class="center-nav">
+          <a href="index.html"> <i class="fa-solid fa-house"></i> Home </a>
+          <a href="about.html" style="background-color: #00ffd275">
+            <i class="fa-solid fa-circle-info"></i> About
+          </a>
+          <a href="timetable.html">
+            <i class="fa-solid fa-book"></i> Academics
+          </a>
+          <a href="departments.html">
+            <i class="fa-solid fa-building"></i> Departments
+          </a>
+          <a href="notices.html">
+            <i class="fa-solid fa-bullhorn"></i> Notices
+          </a>
+          <a href="events.html">
+            <i class="fa-solid fa-calendar-days"></i> Events
+          </a>
+          <a target="_blank" href="maps.html" class="contact-link">
+            <i class="fa-solid fa-phone"></i> Map
+          </a>
+          <a href="contact.html" class="contact-link">
+            <i class="fa-solid fa-phone"></i> Contact
+          </a>
+        </div>
+
+        <div class="nav-btns">
+          <div class="login">
+            <i class="fa-solid fa-angle-right right"></i> <a class="logg">LOGIN</a>
+            <i class="fa-solid fa-angle-left left"></i>
+          </div>
+          <div>
+            <img id="profile-image" style="height: 60px;border-radius: 20%;" alt="">
+          </div>
+        </div>
+        <div class="toggle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 sun"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            />
+          </svg>
+        </div>
+        <div class="hamburger">
+          <i class="fa-solid fa-burger"></i>
+        </div>
+      </nav>
+    </header>
+    <br /><br /><br /><br />
+
+    <main>
+      <h1 id="about">About</h1>
+      <h1 id="eduluxe">EDULUXE</h1>
+      <div class="description">
+        <div class="para">
+          EduLuxe is a smart campus management system designed to streamline
+          student, faculty, and academic operations through an interactive
+          frontend.
+        </div>
+      </div>
+
+      <div class="content">
+        <!-- 
+          JS - CODE IN ABOUT.JS AND PRODUCT.JS
+        -->
+      </div>
+
+      <br /><br /><br />
+
+      <hr style="margin-left: 2em; margin-right: 3em; background: #09ff64" />
+      <br /><br /><br />
+
+      <!-- <div class="about-us">
+        <h1>ABOUT ME</h1>
+        <img src="images/rajat.png" alt="" >
+        <p class="coder">CODER</p>
+        <p style="font-size: 1.4em;color: #0bbfc6;
+  text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;font-weight: bold;">RAJAT SEMWAL</p>
+        <br><br><br>
+        <p class="description-2">
+          Hey there! I’m a Programmer currently pursuing my B.Tech in Computer Science Engineering at Chitkara University. I’m passionate about web development and continuously working on enhancing my skills every day. Along with that, I’m a DSA enthusiast who enjoys problem-solving and building efficient solutions. I aspire to grow into a full-stack developer while exploring new technologies to stay ahead in the tech world.
+        </p>
+        <br><br>
+        <div class="links">
+          <div class="about-us-links"><a href="">GITHUB</a></div>
+          <div class="about-us-links"><a href="">LINKED-IN</a></div>
+          <div class="about-us-links"><a href="">TWITTER</a></div>
+          <div class="about-us-links"><a href="">CONTACT</a></div>
+        </div>
+        </div> -->
+      <!-- </div> -->
+
+      <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                <p>The talented people behind our success</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Team Leader -->
+                <div class="team-card leader">
+                    <div class="card-header">
+                        <span class="badge">Team Leader</span>
+                    </div>
+                    <div class="avatar">
+                        <img src="images/rajat.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="card-content">
+                        <h3>RAJAT SEMWAL</h3>
+                        <p class="role"></p>
+                        <p class="bio">Project Lead & FrontEnd, Backend, Database</p>
+                        <div class="social-links">
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                                </svg>
+                            </a>
+                          </div>
+                          <br><br>
+                          <span style="background-color: rgba(255, 145, 0, 0.784);padding: 5px 10px;font-size: 12px;border-radius:10px; ">
+                            Made with react
+                          </span>
+                          <br><br>
+                          <button class="view" style="padding: 20px;border-radius: 15px;border: none; background-color: rgb(207 21 126);color: white; width: 100%;cursor: pointer;" onClick="window.location.href='https://rajatsemwal17.github.io/React-Portfolio-Rajat/' ">
+                          VIEW MY PORTFOLIO
+                          </button>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-card">
+                    <div class="avatar">
+                        <img src="images/rahuljeet.png" alt="Michael Chen">
+                    </div>
+                    <div class="card-content">
+                        <h3>RAHULJEET SINGH</h3>
+                        <p class="role"></p>
+                        <p class="bio">FrontEnd Developer</p>
+                        <div class="social-links">
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                  </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-card">
+                    <div class="avatar">
+                        <img src="images/rishabh.png" alt="Emily Rodriguez">
+                    </div>
+                    <div class="card-content">
+                        <h3>RISHABH SINGH NEGI</h3>
+                        <p class="role">UI/UX Designer</p>
+                        <p class="bio"></p>
+                        <div class="social-links">
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="team-card">
+                    <div class="avatar">
+                        <img src="images/ritvik.png" alt="David Kim">
+                    </div>
+                    <div class="card-content">
+                        <h3>RITVIK VERMA</h3>
+                        <p class="role">Content Curator</p>
+                        <p class="bio"></p>
+                        <div class="social-links">
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    </main>
+    <br /><br /><br />
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- About Company -->
+          <div class="footer-col">
+            <h4>EduLuxe</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Features</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="timetable.html">Academics</a></li>
+              <li><a href="#">Attendance</a></li>
+              <li><a href="#">Notices</a></li>
+              <li><a href="#">Event Calendar</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Help Desk</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Follow Us -->
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="JS/background.js"></script>
+    <script src="JS/about.js" type="module"></script>
+    <script src="JS/main.js"></script>
+    <script src="JS/toggle.js"></script>
+    <script src="JS/otherBack.js"></script>
+    <script src="JS/profile.js"></script>
+
+    <script>
+      
+      const user = JSON.parse(localStorage.getItem("loggedInUser"));
+      if (!user) {
+        console.log('hello');
+      } else {
+        document.querySelector("#profile-image").src = user.image;
+        document.querySelector(".logg").innerText = `${user.role}!`;
+      }
+</script>
+  </body>
+</html>

@@ -1,78 +1,110 @@
-let input = document.querySelector('#input');
-let password = document.querySelector('#password');
-let loginBtn = document.querySelector('.login-btn');
-let toast = document.querySelector('#toast');
-let toast_p = document.querySelector('#toast p');
-let loaderBar = document.querySelector('.loader div');
+// let input = document.querySelector('#input');
+// let password = document.querySelector('#password');
+// let loginBtn = document.querySelector('.login-btn');
+// let toast = document.querySelector('#toast');
+// let toast_p = document.querySelector('#toast p');
+// let loaderBar = document.querySelector('.loader div');
 
-let hideToastTimeout;
+// let hideToastTimeout;
 
-function showToast(message, type = "error") {
-  toast_p.innerHTML = `<i class="fa-solid fa-triangle-exclamation" style="color: rgb(255, 251, 0);"></i> ` + message;
+// function showToast(message, type = "error") {
+//   toast_p.innerHTML = `<i class="fa-solid fa-triangle-exclamation" style="color: rgb(255, 251, 0);"></i> ` + message;
 
-  // Set color based on type
-  if (type === "success") toast.style.background = "#2ecc71";
-  else if (type === "info") toast.style.background = "#3498db";
-  else toast.style.background = "#e74c3c";
+//   // Set color based on type
+//   if (type === "success") toast.style.background = "#2ecc71";
+//   else if (type === "info") toast.style.background = "#3498db";
+//   else toast.style.background = "#e74c3c";
 
-  toast.classList.add("show");
+//   toast.classList.add("show");
 
-  // Reset and restart loader animation
-  loaderBar.classList.remove("animate");
-  void loaderBar.offsetWidth; // trick to restart CSS animation
-  loaderBar.classList.add("animate");
+//   // Reset and restart loader animation
+//   loaderBar.classList.remove("animate");
+//   void loaderBar.offsetWidth; // trick to restart CSS animation
+//   loaderBar.classList.add("animate");
 
-  // Clear old timeout and start fresh
-  clearTimeout(hideToastTimeout);
-  hideToastTimeout = setTimeout(() => {
-    toast.classList.remove("show");
-  }, 3000);
-}
+//   // Clear old timeout and start fresh
+//   clearTimeout(hideToastTimeout);
+//   hideToastTimeout = setTimeout(() => {
+//     toast.classList.remove("show");
+//   }, 3000);
+// }
 
-function loginFormRequirements() {
-  let input_val = input.value.trim();
-  let password_val = password.value.trim();
+// function loginFormRequirements() {
+//   let input_val = input.value.trim();
+//   let password_val = password.value.trim();
 
-  if (input_val === "" || password_val === "") {
-    showToast('DO NOT KEEP ANY FIELD EMPTY', "error");
-  } 
-  else if (input_val.length < 3) {
-    showToast('❌=Username must be at least 3 characters', "error");
-  } 
-  else if (password_val.length < 6) {
-    showToast('❌ Password must be at least 6 characters', "error");
-  } 
-  else if (!/[A-Z]/.test(password_val)) {
-    showToast('Password must contain at least one uppercase letter', "error");
-  } 
-  else if (!/[0-9]/.test(password_val)) {
-    showToast('Password must contain at least one number', "error");
-  } 
-  else {
-    showToast('FORM SUBMITTED SUCCESSFULLY', "success");
-    setTimeout(() => {
-      location.reload();
-    }, 3000)
+//   if (input_val === "" || password_val === "") {
+//     showToast('DO NOT KEEP ANY FIELD EMPTY', "error");
+//   } 
+//   else if (input_val.length < 3) {
+//     showToast('❌=Username must be at least 3 characters', "error");
+//   } 
+//   else if (password_val.length < 6) {
+//     showToast('❌ Password must be at least 6 characters', "error");
+//   } 
+//   else if (!/[A-Z]/.test(password_val)) {
+//     showToast('Password must contain at least one uppercase letter', "error");
+//   } 
+//   else if (!/[0-9]/.test(password_val)) {
+//     showToast('Password must contain at least one number', "error");
+//   } 
+//   else {
+//     showToast('FORM SUBMITTED SUCCESSFULLY', "success");
+//     setTimeout(() => {
+//       location.reload();
+//     }, 3000)
+//   }
+// }
+
+// loginBtn.addEventListener('click', () => {
+//   loginFormRequirements();
+// });
+
+// document.addEventListener('keydown', (event) => {
+//   if(event.key === 'Enter'){
+//     loginFormRequirements();
+//   }
+// });
+
+// let SIGNUP = document.querySelector('#SIGNUP-A')
+// SIGNUP.addEventListener('click', () => {
+//   document.querySelector('.signup').style.display = 'block';
+//   document.querySelector('.login').style.display = 'none';
+// })
+// let LOGIN = document.querySelector('#LOGIN-A')
+// LOGIN.addEventListener('click', () => {
+//   document.querySelector('.signup').style.display = 'none';
+//   document.querySelector('.login').style.display = 'block';
+// })
+
+
+
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  try {
+    const res = await fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    });
+
+    const data = await res.json();
+    console.log("Response from server:", data); // 🧩 check in console
+
+    if (data.success) {
+      localStorage.setItem("loggedInUser", JSON.stringify(data.user));
+      alert("Login successful!");
+      window.location.href = "index.html";
+    }
+    else {
+      alert("Invalid username or password!");
+    }
+  } catch (error) {
+    console.error("Error connecting to server:", error);
+    alert("Server error. Please try again later.");
   }
-}
-
-loginBtn.addEventListener('click', () => {
-  loginFormRequirements();
-});
-
-document.addEventListener('keydown', (event) => {
-  if(event.key === 'Enter'){
-    loginFormRequirements();
-  }
-});
-
-let SIGNUP = document.querySelector('#SIGNUP-A')
-SIGNUP.addEventListener('click', () => {
-  document.querySelector('.signup').style.display = 'block';
-  document.querySelector('.login').style.display = 'none';
-})
-let LOGIN = document.querySelector('#LOGIN-A')
-LOGIN.addEventListener('click', () => {
-  document.querySelector('.signup').style.display = 'none';
-  document.querySelector('.login').style.display = 'block';
-})
+}); 

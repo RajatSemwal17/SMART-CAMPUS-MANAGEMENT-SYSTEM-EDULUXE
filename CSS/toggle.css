@@ -861,3 +861,9 @@
         text-align: center;
     }
 }
+
+/* index page */
+
+.dark .para-main{
+  color: rgb(0 255 231);
+}

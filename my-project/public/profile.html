@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        .profile-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            background-size: cover;
+        }
+
+        .name {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .role-badge {
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .role-student {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .role-teacher {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .role-admin {
+            background-color: #fff3e0;
+            color: #f57c00;
+        }
+
+        .profile-details {
+            margin-top: 20px;
+        }
+
+        .detail-row {
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #555;
+            width: 150px;
+            flex-shrink: 0;
+        }
+
+        .detail-value {
+            color: #333;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <div class="profile-pic"></div>
+            <div class="name">Sarah Johnson</div>
+            <span class="role-badge role-teacher">Teacher</span>
+        </div>
+
+        <div class="profile-details">
+            <div class="detail-row">
+                <div class="detail-label">User ID:</div>
+                <div class="id">TCH-2024-1045</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Email:</div>
+                <div class="email">sarah.johnson@school.edu</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Phone:</div>
+                <div class="phone">+1 (555) 234-5678</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Department:</div>
+                <div class="dept">Mathematics Department</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Address:</div>
+                <div class="add">123 Main Street, Springfield, IL 62701</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+      
+      const user = JSON.parse(localStorage.getItem("loggedInUser"));
+      if (!user) {
+        console.log('hello');
+      } else {
+        document.querySelector(".name").innerText = `${user.name}`;
+        document.querySelector(".profile-pic").style.backgroundImage = `url(${user.image})`;
+        document.querySelector(".role-badge").innerText = `${user.role.toUpperCase()}`;
+        document.querySelector(".id").innerText = `${user.rollNo}`;
+        document.querySelector(".email").innerText = `${user.email}`;
+        document.querySelector(".phone").innerText = `${user.phone}`;
+        document.querySelector(".dept").innerText = `${user.department}`;
+        document.querySelector(".add").innerText = `${user.address}`;
+
+      }
+</script>
+</body>
+</html>

@@ -328,3 +328,11 @@ my-card:hover{
 .accordion-body{
   background-color: rgb(198, 210, 242);
 }
+
+
+/* Style the dropdown options */
+.selectGroup option {
+  background-color: rgb(5, 5, 104);font-size: 1.2em;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}

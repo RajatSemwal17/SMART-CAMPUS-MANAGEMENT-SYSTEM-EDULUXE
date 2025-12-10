@@ -1,0 +1,543 @@
+{
+  "timetables": [
+    {
+      "id": 1,
+      "group": "G1",
+      "Monday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "ES & IOT (TG 301 - D A)",
+        "12:00 - 1:00": "OOSE (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "FEE II (TG 301 - D C)",
+        "3:00 - 4:00": "FEE II (TG 301 - D C)"
+      },
+      "Tuesday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "ES & IOT (TG 301 - D A)",
+        "12:00 - 1:00": "OOSE (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "FEE II (TG 301 - D C)",
+        "3:00 - 4:00": "FEE II (TG 301 - D C)"
+      },
+      "Wednesday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "DBMS (TG 301 - D MK)",
+        "12:00 - 1:00": "DBMS (TG 301 - D MK)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "ES & IOT Lab (TB 102 Group 1 - D A)",
+        "3:00 - 4:00": "ES & IOT Lab (TB 203 Group 2 - D RT)"
+      },
+      "Thursday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "DBMS (TG 301 - D MK)",
+        "12:00 - 1:00": "DBMS (TG 301 - D MK)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "FEE II (TG 301 - D C)",
+        "3:00 - 4:00": "FEE II (TG 301 - D C)"
+      },
+      "Friday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "OOSE (TG 301 - D C)",
+        "12:00 - 1:00": "BREAK",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "Mentoring (TG 301 - D C)",
+        "3:00 - 4:00": "ES & IOT (TG 301 - D A)"
+      }
+    },
+    {
+      "id": 2,
+      "group": "G2",
+      "Monday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DSOOPS (TG 301 - D DV)",
+        "3:00 - 4:00": "DSOOPS (TG 301 - D DV)"
+      },
+      "Tuesday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DSOOPS (TG 301 - D DV)",
+        "3:00 - 4:00": "DSOOPS (TG 301 - D DV)"
+      },
+      "Wednesday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "OOSE (TG 301 - D C)",
+        "3:00 - 4:00": "ES & IOT (TG 301 - D A)"
+      },
+      "Thursday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "ES & IOT Lab (TB 102 Group 1 - D A)",
+        "3:00 - 4:00": "ES & IOT Lab (TB 203 Group 2 - D RT)"
+      },
+      "Friday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "OOSE (TG 301 - D C)",
+        "12:00 - 1:00": "BREAK",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "Mentoring (TG 301 - D C)",
+        "3:00 - 4:00": "DSOOPS (TG 301 - D DV)"
+      }
+    },
+    {
+      "id": 3,
+      "group": "G3",
+      "Monday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DBMS (TG 301 - D MK)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      },
+      "Tuesday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DBMS (TG 301 - D MK)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      },
+      "Wednesday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "ES & IOT Lab (TB 102 Group 1 - D A)",
+        "3:00 - 4:00": "ES & IOT Lab (TB 203 Group 2 - D RT)"
+      },
+      "Thursday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "OOSE (TG 301 - D C)",
+        "3:00 - 4:00": "ES & IOT (TG 301 - D A)"
+      },
+      "Friday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "OOSE (TG 301 - D C)",
+        "12:00 - 1:00": "BREAK",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "Mentoring (TG 301 - D C)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      }
+    },
+    {
+      "id": 4,
+      "group": "G4",
+      "Monday": {
+        "9:00 - 10:00": "ES & IOT (TG 301 - D A)",
+        "10:00 - 11:00": "OOSE (TG 301 - D C)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DBMS (TG 301 - D MK)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      },
+      "Tuesday": {
+        "9:00 - 10:00": "ES & IOT (TG 301 - D A)",
+        "10:00 - 11:00": "OOSE (TG 301 - D C)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DBMS (TG 301 - D MK)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      },
+      "Wednesday": {
+        "9:00 - 10:00": "ES & IOT (TG 301 - D A)",
+        "10:00 - 11:00": "OOSE (TG 301 - D C)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "ES & IOT Lab (TB 102 Group 1 - D A)",
+        "3:00 - 4:00": "ES & IOT Lab (TB 203 Group 2 - D RT)"
+      },
+      "Thursday": {
+        "9:00 - 10:00": "ES & IOT (TG 301 - D A)",
+        "10:00 - 11:00": "OOSE (TG 301 - D C)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DSOOPS (TG 301 - D DV)",
+        "3:00 - 4:00": "DSOOPS (TG 301 - D DV)"
+      },
+      "Friday": {
+        "9:00 - 10:00": "ES & IOT (TG 301 - D A)",
+        "10:00 - 11:00": "OOSE (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "BREAK",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "Mentoring (TG 301 - D C)",
+        "3:00 - 4:00": "FEE II (TG 301 - D C)"
+      }
+    },
+    {
+      "id": 5,
+      "group": "G5",
+      "Monday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "ES & IOT (TG 301 - D A)",
+        "12:00 - 1:00": "OOSE (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "FEE II (TG 301 - D C)",
+        "3:00 - 4:00": "FEE II (TG 301 - D C)"
+      },
+      "Tuesday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "ES & IOT (TG 301 - D A)",
+        "12:00 - 1:00": "OOSE (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "FEE II (TG 301 - D C)",
+        "3:00 - 4:00": "FEE II (TG 301 - D C)"
+      },
+      "Wednesday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "OOSE (TG 301 - D C)",
+        "12:00 - 1:00": "BREAK",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "Mentoring (TG 301 - D C)",
+        "3:00 - 4:00": "ES & IOT (TG 301 - D A)"
+      },
+      "Thursday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "DBMS (TG 301 - D MK)",
+        "12:00 - 1:00": "DBMS (TG 301 - D MK)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "FEE II (TG 301 - D C)",
+        "3:00 - 4:00": "FEE II (TG 301 - D C)"
+      },
+      "Friday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "DBMS (TG 301 - D MK)",
+        "12:00 - 1:00": "DBMS (TG 301 - D MK)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "ES & IOT Lab (TB 102 Group 1 - D A)",
+        "3:00 - 4:00": "ES & IOT Lab (TB 203 Group 2 - D RT)"
+      }
+    },
+    {
+      "id": 6,
+      "group": "G6",
+      "Monday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DSOOPS (TG 301 - D DV)",
+        "3:00 - 4:00": "DSOOPS (TG 301 - D DV)"
+      },
+      "Tuesday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DSOOPS (TG 301 - D DV)",
+        "3:00 - 4:00": "DSOOPS (TG 301 - D DV)"
+      },
+      "Wednesday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "ES & IOT Lab (TB 102 Group 1 - D A)",
+        "3:00 - 4:00": "ES & IOT Lab (TB 203 Group 2 - D RT)"
+      },
+      "Thursday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "OOSE (TG 301 - D C)",
+        "3:00 - 4:00": "ES & IOT (TG 301 - D A)"
+      },
+      "Friday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "OOSE (TG 301 - D C)",
+        "12:00 - 1:00": "BREAK",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "Mentoring (TG 301 - D C)",
+        "3:00 - 4:00": "DSOOPS (TG 301 - D DV)"
+      }
+    },
+    {
+      "id": 7,
+      "group": "G7",
+      "Monday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DBMS (TG 301 - D MK)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      },
+      "Tuesday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DBMS (TG 301 - D MK)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      },
+      "Wednesday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "OOSE (TG 301 - D C)",
+        "3:00 - 4:00": "ES & IOT (TG 301 - D A)"
+      },
+      "Thursday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "ES & IOT Lab (TB 102 Group 1 - D A)",
+        "3:00 - 4:00": "ES & IOT Lab (TB 203 Group 2 - D RT)"
+      },
+      "Friday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "OOSE (TG 301 - D C)",
+        "12:00 - 1:00": "BREAK",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "Mentoring (TG 301 - D C)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      }
+    },
+    {
+      "id": 8,
+      "group": "G8",
+      "Monday": {
+        "9:00 - 10:00": "ES & IOT (TG 301 - D A)",
+        "10:00 - 11:00": "OOSE (TG 301 - D C)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DBMS (TG 301 - D MK)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      },
+      "Tuesday": {
+        "9:00 - 10:00": "ES & IOT (TG 301 - D A)",
+        "10:00 - 11:00": "OOSE (TG 301 - D C)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DBMS (TG 301 - D MK)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      },
+      "Wednesday": {
+        "9:00 - 10:00": "ES & IOT (TG 301 - D A)",
+        "10:00 - 11:00": "OOSE (TG 301 - D C)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DSOOPS (TG 301 - D DV)",
+        "3:00 - 4:00": "DSOOPS (TG 301 - D DV)"
+      },
+      "Thursday": {
+        "9:00 - 10:00": "ES & IOT (TG 301 - D A)",
+        "10:00 - 11:00": "OOSE (TG 301 - D C)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "ES & IOT Lab (TB 102 Group 1 - D A)",
+        "3:00 - 4:00": "ES & IOT Lab (TB 203 Group 2 - D RT)"
+      },
+      "Friday": {
+        "9:00 - 10:00": "ES & IOT (TG 301 - D A)",
+        "10:00 - 11:00": "OOSE (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "BREAK",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "Mentoring (TG 301 - D C)",
+        "3:00 - 4:00": "FEE II (TG 301 - D C)"
+      }
+    },
+    {
+      "id": 9,
+      "group": "G9",
+      "Monday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "ES & IOT (TG 301 - D A)",
+        "12:00 - 1:00": "OOSE (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "FEE II (TG 301 - D C)",
+        "3:00 - 4:00": "FEE II (TG 301 - D C)"
+      },
+      "Tuesday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "ES & IOT (TG 301 - D A)",
+        "12:00 - 1:00": "OOSE (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "FEE II (TG 301 - D C)",
+        "3:00 - 4:00": "FEE II (TG 301 - D C)"
+      },
+      "Wednesday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "OOSE (TG 301 - D C)",
+        "12:00 - 1:00": "BREAK",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "Mentoring (TG 301 - D C)",
+        "3:00 - 4:00": "ES & IOT (TG 301 - D A)"
+      },
+      "Thursday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "DBMS (TG 301 - D MK)",
+        "12:00 - 1:00": "DBMS (TG 301 - D MK)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "FEE II (TG 301 - D C)",
+        "3:00 - 4:00": "FEE II (TG 301 - D C)"
+      },
+      "Friday": {
+        "9:00 - 10:00": "DSOOPS (TG 301 - D DV)",
+        "10:00 - 11:00": "DSOOPS (TG 301 - D DV)",
+        "11:00 - 12:00": "DBMS (TG 301 - D MK)",
+        "12:00 - 1:00": "DBMS (TG 301 - D MK)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "ES & IOT Lab (TB 102 Group 1 - D A)",
+        "3:00 - 4:00": "ES & IOT Lab (TB 203 Group 2 - D RT)"
+      }
+    },
+    {
+      "id": 10,
+      "group": "G10",
+      "Monday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DSOOPS (TG 301 - D DV)",
+        "3:00 - 4:00": "DSOOPS (TG 301 - D DV)"
+      },
+      "Tuesday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DSOOPS (TG 301 - D DV)",
+        "3:00 - 4:00": "DSOOPS (TG 301 - D DV)"
+      },
+      "Wednesday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "ES & IOT Lab (TB 102 Group 1 - D A)",
+        "3:00 - 4:00": "ES & IOT Lab (TB 203 Group 2 - D RT)"
+      },
+      "Thursday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "FEE II (TG 301 - D C)",
+        "12:00 - 1:00": "FEE II (TG 301 - D C)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "OOSE (TG 301 - D C)",
+        "3:00 - 4:00": "ES & IOT (TG 301 - D A)"
+      },
+      "Friday": {
+        "9:00 - 10:00": "DBMS (TG 301 - D MK)",
+        "10:00 - 11:00": "DBMS (TG 301 - D MK)",
+        "11:00 - 12:00": "OOSE (TG 301 - D C)",
+        "12:00 - 1:00": "BREAK",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "Mentoring (TG 301 - D C)",
+        "3:00 - 4:00": "DSOOPS (TG 301 - D DV)"
+      }
+    },
+    {
+      "id": 11,
+      "group": "G11",
+      "Monday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DBMS (TG 301 - D MK)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      },
+      "Tuesday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "DBMS (TG 301 - D MK)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      },
+      "Wednesday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "OOSE (TG 301 - D C)",
+        "3:00 - 4:00": "ES & IOT (TG 301 - D A)"
+      },
+      "Thursday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "DSOOPS (TG 301 - D DV)",
+        "12:00 - 1:00": "DSOOPS (TG 301 - D DV)",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "ES & IOT Lab (TB 102 Group 1 - D A)",
+        "3:00 - 4:00": "ES & IOT Lab (TB 203 Group 2 - D RT)"
+      },
+      "Friday": {
+        "9:00 - 10:00": "FEE II (TG 301 - D C)",
+        "10:00 - 11:00": "FEE II (TG 301 - D C)",
+        "11:00 - 12:00": "OOSE (TG 301 - D C)",
+        "12:00 - 1:00": "BREAK",
+        "1:00 - 2:00": "BREAK",
+        "2:00 - 3:00": "Mentoring (TG 301 - D C)",
+        "3:00 - 4:00": "DBMS (TG 301 - D MK)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDULUXE</title>
+
+    <head>
+</script>
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.freepik.com/512/3624/3624948.png"
+    />
+
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      />
+      
+      <link rel="stylesheet" href="CSS/style.css" />
+      <link rel="stylesheet" href="CSS/timetable.css">
+      <link rel="stylesheet" href="CSS/toggle.css">
+      <link rel="stylesheet" href="MediaQuerries/media1.css"/>
+
+      <style>
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+        
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        
+        @keyframes particle {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(30px, -30px);
+                opacity: 0;
+            }
+        }
+        
+        .enhanced-btn:active {
+            box-shadow: 
+                0 5px 15px rgba(137, 74, 255, 0.4),
+                0 2px 8px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+        }
+      </style>
+    </head>
+    <body>
+      <script>
+        
+        // const user = localStorage.getItem("loggedInUser");
+        const user = JSON.parse(localStorage.getItem("loggedInUser"));
+      // const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!user) {
+      window.location.href = "login-signup.html";
+    }
+    
+  </script>
+    
+    <div id="tsparticles"></div>
+
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="images/eduluxe.png" alt="" />
+        </div>
+
+        <div class="center-nav">
+  <a href="" style="background-color: #00ffd275">
+    <i class="fa-solid fa-house"></i> Home
+  </a>
+  <a href="about.html">
+    <i class="fa-solid fa-circle-info"></i> About
+  </a>
+  <a href="timetable.html" class="nav-links">
+    <i class="fa-solid fa-book"></i> Academics
+  </a>
+  <a href="departments.html" class="nav-links">
+    <i class="fa-solid fa-building"></i> Departments
+  </a>
+  <a href="notices.html" class="nav-links">
+    <i class="fa-solid fa-bullhorn"></i> Notices
+  </a>
+  <a href="events.html" class="nav-links">
+    <i class="fa-solid fa-calendar-days"></i> Events
+  </a>
+  <a target="_blank" href="maps.html" class="contact-link">
+            <i class="fa-solid fa-phone"></i> Map
+          </a>
+  <a href="contact.html" class="contact-link nav-links">
+    <i class="fa-solid fa-phone"></i> Contact
+  </a>
+</div>
+
+
+<div class="nav-btns">
+  <div class="login" id="loginBtn">
+    <i class="fa-solid fa-angle-right right"></i> <a class="logg">LOGIN</a>
+    <i class="fa-solid fa-angle-left left"></i>
+  </div>
+  <div class="logout" onclick="window.location.href='login-signup.html'" >
+    <i class="fa-solid fa-angle-right right2"></i> LOGOUT
+  </div>
+</div>
+
+<div class="toggle">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-6 sun"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+      />
+    </svg>
+  </div>
+        <div class="hamburger">
+          <i class="fa-solid fa-burger"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      
+      <div class="front-view">
+        <div class="title-main">
+          <h1 class="element"></h1>
+        </div>
+        <br>
+        <div class="para-main">
+          Your all-in-one smart campus companion for seamless student, faculty,
+          and admin management
+        </div>
+        
+        <!-- <h1 style="font-size: 20px;">WELCOME USER</h1> -->
+        <div class="start">
+          <button class="get-started">
+            <a  style="color: white;">WELCOME <span id="welcomeText" style="color: rgb(4 255 0);font-weight: 900;font-size: 17px;">USER</span></a>
+          </button>
+        </div>
+
+        
+        
+        <div class="front-image">
+          <img id="front-imgg" src="images/front-image.png" alt="">
+        </div>
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+    <br><br>
+    <div class="add-user" style="display: none; align-items: center; justify-content: center; position: relative;">
+  <!-- Animated Background Glow -->
+  <div style="
+      position: absolute;
+      width: 20px;
+      height: 80px;
+      background: linear-gradient(135deg, #894aff, #ff6b9d);
+      border-radius: 50px;
+      filter: blur(25px);
+      opacity: 0.6;
+      animation: pulse 2s ease-in-out infinite;
+  "></div>
+  
+  <button 
+  class="enhanced-btn"
+  onclick="window.open('adminForm.html', '_blank')"
+      onmouseover="this.style.transform='translateY(-5px) scale(1.05)'; this.querySelector('.icon-wrapper').style.transform='rotate(360deg)'"
+      onmouseout="this.style.transform='translateY(0) scale(1)'; this.querySelector('.icon-wrapper').style.transform='rotate(0deg)'"
+      onmousedown="this.style.transform='translateY(-2px) scale(1.02)'"
+      onmouseup="this.style.transform='translateY(-5px) scale(1.05)'"
+      style="
+          position: relative;
+          padding: 14px 35px;
+          font-size: 20px;
+          font-weight: 700;
+          background: linear-gradient(135deg, #894aff 0%, #b24aff 50%, #894aff 100%);
+          background-size: 200% 100%;
+          color: white;
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          box-shadow: 
+              0 10px 30px rgba(137, 74, 255, 0.4),
+              0 5px 15px rgba(0, 0, 0, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          letter-spacing: 0.5px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          overflow: hidden;
+          transform: translateY(0) scale(1);
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          "
+  >
+      <!-- Shimmer Effect -->
+      <div style="
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+          animation: shimmer 3s infinite;
+          "></div>
+      
+      <!-- Icon Wrapper with Rotation -->
+      <div class="icon-wrapper" style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          transition: transform 0.6s ease;
+          backdrop-filter: blur(10px);
+      ">
+          <i class="fas fa-user-plus" style="font-size: 16px;"></i>
+      </div>
+      
+      <span style="position: relative; z-index: 1;">Add Users</span>
+      
+      <!-- Particle Effect on Hover -->
+      <div style="
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          width: 6px;
+          height: 6px;
+          background: white;
+          border-radius: 50%;
+          opacity: 0;
+          animation: particle 2s ease-in-out infinite;
+          "></div>
+  </button>
+  </div>
+    
+    
+    <div class="chat-button" id="chatButton" title="Chatbot">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+            <circle cx="12" cy="10" r="1"/>
+            <circle cx="8" cy="10" r="1"/>
+            <circle cx="16" cy="10" r="1"/>
+        </svg>
+      </div>
+
+      <!-- Chat Window -->
+      <div class="chat-window" id="chatWindow"  >
+        <div class="chat-header">
+          <h3>Chat Support</h3>
+            <button class="close-button" id="closeButton">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+              </button>
+        </div>
+        <div class="chat-body">
+          <iframe 
+          src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/10/06/16/20251006161924-IZK7OBY3.json"
+                title="Chatbot">
+            </iframe>
+        </div>
+      </div>
+
+    </main>
+      <br><br><br>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- About Company -->
+          <div class="footer-col">
+            <h4>EduLuxe</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Features</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="timetable.html">Academics</a></li>
+              <li><a href="departments.html">Attendance</a></li>
+              <li><a href="notices.html">Notices</a></li>
+              <li><a href="events.html">Event Calendar</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Help Desk</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Follow Us -->
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <div class="made-by-love">
+        <p>Made with ❤️ and ☕ by <span style="font-weight: 900;">Rajat</span> <span style="color: blueviolet;font-weight: 900;">Semwal</span></p>
+      </div>
+    </footer>
+
+    <script>
+        const chatButton = document.getElementById('chatButton');
+        const chatWindow = document.getElementById('chatWindow');
+        const closeButton = document.getElementById('closeButton');
+
+        // Open chat window
+        chatButton.addEventListener('click', () => {
+            chatWindow.classList.add('active');
+            chatButton.classList.add('hidden');
+        });
+
+        // Close chat window
+        const closeChat = () => {
+            chatWindow.classList.remove('active');
+            chatButton.classList.remove('hidden');
+        };
+
+        closeButton.addEventListener('click', closeChat);
+
+        // Close when clicking outside the chat window
+        document.addEventListener('click', (e) => {
+            if (chatWindow.classList.contains('active') && 
+                !chatWindow.contains(e.target) && 
+                !chatButton.contains(e.target)) {
+                closeChat();
+            }
+        });
+    </script>
+
+
+    <script src="JS/main.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    
+    <script src="JS/background.js"></script>
+    <script>
+      var typed = new Typed(".element", {
+      strings: [
+        "Welcome to EduLuxe",
+        "Empowering Smarter Campuses",
+        "Your Digital Campus Companion",
+      ],
+      typeSpeed: 60,
+      backSpeed: 60,
+      loop: true,
+    });
+    </script>
+
+    <!-- <script src="JS/index.js"></script> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="../../../JS/toggle.js"></script>
+    <script src="JS/timetable.js"></script>
+
+<script>
+  // const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  const links = document.querySelectorAll(".nav-link");
+  const loginBtn = document.getElementById("loginBtn");
+  const logoutBtn = document.getElementsByClassName("logout")[0];
+      
+  if (!user) {
+    links.forEach(link => link.classList.add("disabled-link"));
+    loginBtn.style.display = "block";
+    logoutBtn.style.display = "none";
+    window.location.replace("http://localhost:5173/");
+  } else {
+    document.querySelector("#welcomeText").innerText = `${user.name}!`;
+    document.querySelector(".logg").innerText = `${user.role}!`;
+    links.forEach(link => link.classList.remove("disabled-link"));
+    logoutBtn.style.display = "block";
+  }
+
+  if(user.role === "admin"){
+    document.querySelector(".add-user").style.display="flex";
+  }
+
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "http://localhost:5173/";
+  });
+</script>
+
+
+
+
+
+  </body>
+</html>
